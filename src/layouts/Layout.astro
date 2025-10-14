@@ -1,24 +1,93 @@
+---
+import Menu from "../components/menu/menu"
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
+
 	<body>
-		<slot />
+		<!-- Menú fijo -->
+		<header class="menu-fijo">
+			<Menu client:load />
+		</header>
+
+		<!-- Contenedor del contenido desplazable -->
+		<div id="scroll-wrapper">
+			<main>
+			<slot />
+			</main>
+		</div>
 	</body>
 </html>
 
 <style is:global>
-	@import "tailwindcss";
+  @import 'tailwindcss';  
+  @plugin "@midudev/tailwind-animations";
 
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+  :root{
+     background: linear-gradient(
+          to bottom,
+          #0b0b0d 0%,   /* negro azulado oscuro arriba */
+          #0e0f14 25%,  /* transición sutil gris-azul */
+          #0f1524 50%,  /* azul oscuro intermedio */
+          #0c1c35 75%,  /* azul profundo */
+          #0a2048 100%  /* azul más intenso al final */
+        );
+        background-attachment: fixed; /* efecto parallax suave */
+        background-repeat: no-repeat;
+        background-size: cover;
+  }
+	html{
+		 margin: 0;
+		padding: 0;
 	}
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+         scroll-behavior: smooth;
+         
+      }
+      section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scroll-snap-align: start;
+        padding: 4rem 2rem;
+      }
+
+      
+   
 </style>
+
+ <!-- Script para suavizar el scroll -->
+  <!-- <script is:inline>
+    let current = 0;
+    let target = 0;
+    const ease = 0.05; // menor = más suave (0.04–0.08 recomendado)
+
+    function smoothScroll() {
+      target = window.scrollY; // posición real del scroll
+      current += (target - current) * ease; // interpolación
+      const wrapper = document.getElementById("scroll-wrapper");
+      wrapper.style.transform = `translateY(${-current}px)`; // mueve visualmente
+      requestAnimationFrame(smoothScroll);
+    }
+
+    const wrapper = document.getElementById("scroll-wrapper");
+    wrapper.style.willChange = "transform";
+    smoothScroll();
+  </script> -->
+
+
+
+

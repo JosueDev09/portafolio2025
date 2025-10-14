@@ -1,7 +1,44 @@
+---
+import './hero.css';
+---
 
 
-
-<section class="w-full h-full bg-gray-100 py-12">
- 
+<section class="w-full hero">
+     <div class="hero-content">
+    <h1>JOSUE ; DEV</h1>
+    <p>Desarrollador Web Full Stack</p>
+  </div>
 
 </section>
+
+
+
+<script>
+  const hero = document.querySelector(".hero") as HTMLElement;
+  const content = document.querySelector(".hero-content") as HTMLElement;
+
+  // 🟢 Animación de entrada al cargar
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      if (content) {
+        content.classList.add("show");
+      }
+    }, 200); // pequeño delay para suavizar
+  });
+
+  // 🟡 Animación de salida al hacer scroll
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const heroHeight = hero.offsetHeight;
+
+    const progress = Math.min(scrollY / heroHeight, 1);
+
+    const translateY = progress * -100; // movimiento más natural
+    const opacity = 1 - progress * 1.2;
+
+    if (scrollY < heroHeight) {
+      content.style.transform = `translateY(${translateY}px)`;
+      content.style.opacity = opacity < 0 ? "0" : opacity.toString();
+    }
+  });
+</script>

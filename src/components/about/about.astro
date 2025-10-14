@@ -1,0 +1,60 @@
+---
+import './about.css';
+---
+
+<section   
+  id="sobre-mi"
+  class="section w-full relative z-[1] text-white flex items-center justify-center p-6 min-h-screen 
+         bg-gradient-to-b from-[#0f1628] to-[#0a2048] opacity-0 translate-y-12
+         transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] 
+         will-change-transform will-change-opacity"
+>
+  <div id="about-content" class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl font-bold mb-6">Sobre Mi</h1>
+    <p class="text-lg mb-4">
+      ¡Hola! Soy Josue, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales.
+      Con experiencia en HTML, CSS, JavaScript y frameworks modernos como React y Vue, me especializo en construir
+      sitios web responsivos y aplicaciones web dinámicas.
+    </p>
+    <p class="text-lg mb-4">
+      Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente. Disfruto trabajando en equipo
+      y colaborando en proyectos que desafían mis capacidades técnicas.
+    </p>
+    <p class="text-lg">
+      Cuando no estoy codificando, me gusta explorar la naturaleza, leer libros de tecnología y jugar videojuegos.
+      Estoy emocionado por las oportunidades futuras y siempre abierto a nuevos desafíos en el mundo del desarrollo web.
+    </p>
+  </div>
+</section>
+
+<script>
+  const content = document.getElementById("sobre-mi");
+
+  // 🟢 Estado inicial (invisible y más abajo)
+  if (content) {
+    content.style.opacity = "0";
+    content.style.transform = "translateY(80px)";
+    content.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+  }
+
+  // 🟡 Detectar cuando el usuario hace scroll
+  window.addEventListener("scroll", () => {
+    if (!content) return;
+
+    const rect = content.getBoundingClientRect(); // posición del elemento
+    const windowHeight = window.innerHeight;
+
+    // Calcula cuánto del elemento está visible
+    const visible = 1 - rect.top / windowHeight;
+
+    // Si está entrando en el viewport
+    if (visible > 0.1 && visible <= 1) {
+      const opacity = Math.min(visible * 1.5, 1); // aparece gradualmente
+      const translateY = 80 * (1 - visible); // sube gradualmente
+
+      content.style.opacity = opacity.toString();
+      content.style.transform = `translateY(${translateY}px)`;
+    }
+  });
+</script>
+

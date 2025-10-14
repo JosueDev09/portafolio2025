@@ -1,12 +1,11 @@
 ---
 import Hero from '../components/hero/hero.astro';
-import Menu from '../components/menu/menu.tsx';
-import About from '../components/about/about.tsx';
+import About from '../components/about/about.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-<Menu client:load/>
+
   <Hero/>
   <About/>
 </Layout>
