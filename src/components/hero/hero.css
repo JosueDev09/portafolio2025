@@ -29,6 +29,9 @@
   line-height: 0.9;
   letter-spacing: -0.03em;
   margin: 0;
+  background: linear-gradient(to right, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {

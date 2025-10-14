@@ -2,37 +2,36 @@
 import './about.css';
 ---
 
-<section   
+<section
   id="sobre-mi"
-  class="section w-full relative z-[1] text-white flex items-center justify-center p-6 min-h-screen 
-         bg-gradient-to-b from-[#0f1628] to-[#0a2048] opacity-0 translate-y-12
-         transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] 
-         will-change-transform will-change-opacity"
+  class="section relative z-[1] text-white flex items-center justify-center p-6 min-h-screen
+         opacity-0 translate-y-12
+         transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]
+         will-change-transform will-change-opacity overflow-hidden"
 >
   <div id="about-content" class="max-w-6xl mx-auto w-full">
-    <!-- Grid de 2 columnas: texto izquierda, imagen derecha -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       
-      <!-- Columna de texto (izquierda) -->
+      <!-- Texto -->
       <div class="space-y-6 text-left lg:pr-8">
-        <h1 class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Sobre Mi
-        </h1>
-        <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
-          ¡Hola! Soy <span class="text-blue-400 font-semibold">Josue Flores</span>, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales.
-          Con experiencia en HTML, CSS, JavaScript y frameworks modernos como React y Vue, me especializo en construir
-          sitios web responsivos y aplicaciones web dinámicas.
-        </p>
-        <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
-          Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente. Disfruto trabajando en equipo
-          y colaborando en proyectos que desafían mis capacidades técnicas.
-        </p>
-        <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
-          Cuando no estoy codificando, me gusta explorar la naturaleza, leer libros de tecnología y jugar videojuegos.
-          Estoy emocionado por las oportunidades futuras y siempre abierto a nuevos desafíos en el mundo del desarrollo web.
-        </p>
-        
-        <!-- Botones de acción -->
+        <!-- Contenido que cambia con parallax -->
+        <div id="text-content" class="transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+          <h1 id="main-title" class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+            Sobre Mi
+          </h1>
+          <div id="text-paragraphs">
+            <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
+              ¡Hola! Soy <span class="text-blue-400 font-semibold">Josue Flores</span>, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales.
+            </p>
+            <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
+              Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.
+            </p>
+            <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
+              Cuando no estoy codificando, me gusta explorar la naturaleza, leer libros de tecnología y jugar videojuegos.
+            </p>
+          </div>
+        </div>
+
         <div class="flex flex-wrap gap-4 mt-8">
           <a href="/contact" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition-colors duration-300">
             Contáctame
@@ -43,24 +42,31 @@ import './about.css';
         </div>
       </div>
 
-      <!-- Columna de imagen (derecha) -->
+      <!-- Imagen -->
       <div class="relative flex justify-center lg:justify-end">
         <div class="relative">
-          <!-- Contenedor de la imagen con efectos -->
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
+          <div id="image-container" class="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Imagen principal -->
             <img 
+              id="main-image"
               src="/assets/imgConvertidas/programacionProfile.webp" 
               alt="Josue - Desarrollador Web" 
-              class=" w-80 h-96 lg:w-96 lg:h-[28rem] object-cover transition-transform duration-500 hover:scale-105"
+              class="w-80 h-96 lg:w-96 lg:h-[28rem] object-cover transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform will-change-opacity"
             />
-            <!-- Overlay con gradiente -->
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+            <!-- Segunda imagen (oculta inicialmente) - con filtro diferente -->
+            <img 
+              id="secondary-image"
+              src="/assets/imgConvertidas/programacionProfile.webp" 
+              alt="Josue - Programador" 
+              class="absolute inset-0 w-80 h-96 lg:w-96 lg:h-[28rem] object-cover opacity-0 transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)] filter sepia-[0.3] hue-rotate-[240deg] saturate-[1.4] will-change-transform will-change-opacity"
+            />
+            <div id="image-overlay" class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]"></div>
           </div>
-          
-          <!-- Elementos decorativos de fondo -->
-          <div class="absolute -top-4 -left-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-xl"></div>
-          <div class="absolute top-1/2 -right-8 w-16 h-16 bg-cyan-400/20 rounded-full blur-lg"></div>
+
+          <!-- Elementos decorativos que también cambian -->
+          <div id="decoration-1" class="absolute -top-4 -left-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
+          <div id="decoration-2" class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-xl transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
+          <div id="decoration-3" class="absolute top-1/2 -right-8 w-16 h-16 bg-cyan-400/20 rounded-full blur-lg transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
         </div>
       </div>
       
@@ -69,33 +75,183 @@ import './about.css';
 </section>
 
 <script>
-  const content = document.getElementById("sobre-mi");
+  // Configuración del parallax
+  const PARALLAX_TRIGGER = 763;
+  const PARALLAX_DURATION = 400;
+  
+  // Estado para evitar el temblor
+  let isParallaxActive = false;
+  let lastScrollY = 0;
+  let animationFrame = null;
+  let currentProgress = 0;
+  let targetProgress = 0;
+  
+  // Función de interpolación lineal
+  const lerp = (start: number, end: number, factor: number): number => {
+    return start + (end - start) * factor;
+  };
+  
+  // Función de easing suave
+  const easeOutCubic = (t:any) => 1 - Math.pow(1 - t, 3);
+  const easeInOutCubic = (t:any) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-  // 🟢 Estado inicial (invisible y más abajo)
-  if (content) {
+  // Función que se ejecuta cuando carga la página
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Script de parallax cargado');
+    
+    // Elementos del DOM
+    const content = document.getElementById("sobre-mi");
+    const mainTitle = document.getElementById("main-title");
+    const textParagraphs = document.getElementById("text-paragraphs");
+    const mainImage = document.getElementById("main-image");
+    const secondaryImage = document.getElementById("secondary-image");
+    
+    // Verificar que los elementos existen
+    console.log('Elements found:', {
+      content: !!content,
+      mainTitle: !!mainTitle,
+      textParagraphs: !!textParagraphs,
+      mainImage: !!mainImage,
+      secondaryImage: !!secondaryImage
+    });
+
+    if (!content) {
+      console.error('❌ Elemento "sobre-mi" no encontrado');
+      return;
+    }
+
+    // Estado inicial
     content.style.opacity = "0";
     content.style.transform = "translateY(80px)";
     content.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-  }
 
-  // 🟡 Detectar cuando el usuario hace scroll
-  window.addEventListener("scroll", () => {
-    if (!content) return;
+    // Función para actualizar el título - versión simplificada y estable
+    const updateTitleSmooth = (progress: number) => {
+      if (!mainTitle) return;
+      
+      if (progress > 0.5) {
+        mainTitle.innerHTML = "Mi Experiencia";
+        // Usar clases CSS en lugar de estilos inline
+        mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-500 bg-clip-text text-transparent transition-all duration-500 ease-out";
+      } else {
+        mainTitle.innerHTML = "Sobre Mi";
+        mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-500 ease-out";
+      }
+    };
 
-    const rect = content.getBoundingClientRect(); // posición del elemento
-    const windowHeight = window.innerHeight;
+    // Función para actualizar imagen - versión simplificada
+    const updateImageSmooth = (progress: number) => {
+      if (!mainImage || !secondaryImage) return;
+      
+      const imageProgress = Math.max(0, Math.min(1, (progress - 0.3) / 0.4));
+      
+      mainImage.style.opacity = (1 - imageProgress).toString();
+      secondaryImage.style.opacity = imageProgress.toString();
+    };
 
-    // Calcula cuánto del elemento está visible
-    const visible = 1 - rect.top / windowHeight;
+    // Función para actualizar decoraciones - versión simplificada
+    const updateDecorationsSmooth = (progress: number) => {
+      const decoration1 = document.getElementById("decoration-1");
+      const decoration2 = document.getElementById("decoration-2");
+      const decoration3 = document.getElementById("decoration-3");
+      
+      if (!decoration1 || !decoration2 || !decoration3) return;
+      
+      if (progress > 0.4) {
+        decoration1.style.backgroundColor = "rgba(147, 51, 234, 0.3)"; // purple
+        decoration2.style.backgroundColor = "rgba(6, 182, 212, 0.25)"; // cyan
+        decoration3.style.backgroundColor = "rgba(236, 72, 153, 0.25)"; // pink
+      }
+    };
 
-    // Si está entrando en el viewport
-    if (visible > 0.1 && visible <= 1) {
-      const opacity = Math.min(visible * 1.5, 1); // aparece gradualmente
-      const translateY = 80 * (1 - visible); // sube gradualmente
+    // Event listener principal - versión estable sin temblor
+    let lastProgress = -1; // Para evitar actualizaciones innecesarias
+    
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
 
-      content.style.opacity = opacity.toString();
-      content.style.transform = `translateY(${translateY}px)`;
-    }
+      // Efecto de aparición inicial
+      const rect = content.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const visible = 1 - rect.top / windowHeight;
+
+      if (visible > 0.1 && visible <= 1) {
+        const opacity = Math.min(visible * 1.5, 1);
+        const translateY = 80 * (1 - visible);
+        content.style.opacity = opacity.toString();
+        content.style.transform = `translateY(${translateY}px)`;
+      }
+
+      // Efecto parallax cuando scroll >= PARALLAX_TRIGGER
+      if (scrollY >= PARALLAX_TRIGGER && scrollY <= PARALLAX_TRIGGER + PARALLAX_DURATION) {
+        if (!isParallaxActive) {
+          console.log('✨ Parallax ACTIVADO en:', scrollY);
+          isParallaxActive = true;
+        }
+
+        // Calcular progreso directo sin interpolación para evitar temblor
+        const progress = Math.min((scrollY - PARALLAX_TRIGGER) / PARALLAX_DURATION, 1);
+        
+        // Solo actualizar si hay cambio significativo (reduce el temblor)
+        if (Math.abs(progress - lastProgress) > 0.02) {
+          lastProgress = progress;
+          
+          // Aplicar efectos directamente
+          updateTitleSmooth(progress);
+          updateImageSmooth(progress);
+          updateDecorationsSmooth(progress);
+
+          // Cambio gradual del fondo
+          if (progress > 0.6) {
+            const bgOpacity = (progress - 0.6) / 0.4 * 0.7;
+            content.style.background = `linear-gradient(135deg, 
+              rgba(15, 15, 35, ${bgOpacity}) 0%, 
+              rgba(26, 26, 46, ${bgOpacity * 0.8}) 50%, 
+              rgba(22, 33, 62, ${bgOpacity * 0.6}) 100%)`;
+          }
+        }
+        
+      } else {
+        if (isParallaxActive) {
+          console.log('⏹️ Parallax DESACTIVADO');
+          isParallaxActive = false;
+          
+          // Resetear suavemente al estado inicial
+          // Resetear inmediatamente al salir del área
+          currentProgress = 0;
+          content.style.background = "";
+          content.style.transform = "translateY(0px)";
+          
+          if (mainTitle) {
+            mainTitle.innerHTML = "Sobre Mi";
+            mainTitle.style.background = "";
+            mainTitle.style.webkitBackgroundClip = "";
+            mainTitle.style.webkitTextFillColor = "";
+            mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]";
+          }
+          
+          if (mainImage && secondaryImage) {
+            mainImage.style.opacity = "1";
+            mainImage.style.transform = "scale(1)";
+            secondaryImage.style.opacity = "0";
+            secondaryImage.style.transform = "scale(1)";
+          }
+          
+          // Reset decorations
+          const decoration1 = document.getElementById("decoration-1");
+          const decoration2 = document.getElementById("decoration-2");
+          const decoration3 = document.getElementById("decoration-3");
+          
+          if (decoration1) decoration1.style.backgroundColor = "";
+          if (decoration2) decoration2.style.backgroundColor = "";
+          if (decoration3) decoration3.style.backgroundColor = "";
+        }
+      }
+    });
+
+    // Trigger inicial
+    setTimeout(() => {
+      window.dispatchEvent(new Event('scroll'));
+    }, 100);
   });
 </script>
-
