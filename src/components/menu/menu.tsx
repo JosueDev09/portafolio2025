@@ -62,12 +62,12 @@ export default function Menu() {
     return (
         <>
             {/* Desktop Header */}
-          <header
+        <header
             className={`hidden md:flex fixed left-1/4 w-[45%] items-center justify-center rounded-2xl z-50 px-6 py-3
-                transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] animate-blurred-fade-in
+                transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)]
                 ${
                 scroll
-                    ? "top-3 bg-[linear-gradient(to_bottom,rgba(11,11,13,0.85)_0%,rgba(14,15,20,0.85)_25%,rgba(15,21,36,0.85)_50%,rgba(12,28,53,0.85)_75%,rgba(10,32,72,0.85)_100%)] shadow-lg backdrop-blur-[24px] border border-white/10"
+                    ? "top-3 bg-[linear-gradient(to_bottom,rgba(11,11,13,0.8)_0%,rgba(14,15,20,0.8)_25%,rgba(15,21,36,0.8)_50%,rgba(12,28,53,0.8)_75%,rgba(10,32,72,0.8)_100%)] backdrop-blur-[20px] border border-transparent hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(0,174,255,0.25)] hover:border-cyan-400/20"
                     : "top-6 bg-transparent border border-transparent"
                 }`}
             >
@@ -85,19 +85,26 @@ export default function Menu() {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <div className="flex items-center space-x-6">
-                        {nav.map((item) => (
-                            <a
-                            key={item.name}
-                            href={item.href}
-                            className={`hover:bg-gray-600 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ${
-                                scroll ? "text-white" : "text-white"
-                            }`}
-                            >
-                            {item.name}
-                            </a>
-                        ))}
-                        </div>
+                      <div className="flex items-center space-x-6">
+                            {nav.map((item) => (
+                                <a
+                                key={item.name}
+                                href={item.href}
+                                className={`relative px-4 py-2 rounded-xl text-lg font-semibold tracking-wide text-white/90
+                                    transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]
+                                    hover:text-white hover:scale-[1.05]
+                                    hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]
+                                    before:absolute before:inset-0 before:rounded-xl
+                                    before:bg-[rgba(255,255,255,0.08)] before:backdrop-blur-[12px]
+                                    before:opacity-0 hover:before:opacity-100
+                                    before:transition-all before:duration-500 before:ease-[cubic-bezier(0.25,0.8,0.25,1)]
+                                    ${scroll ? "text-white" : "text-white"}`}
+                                >
+                                <span className="relative z-10">{item.name}</span>
+                                </a>
+                            ))}
+                            </div>
+
                     </nav>
                     </header>
 
