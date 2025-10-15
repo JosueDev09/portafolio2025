@@ -1,27 +1,141 @@
 
 #sobre-mi {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  will-change: opacity, transform;
-}
-.section {
-  opacity: 0;
-  transform: translateY(80px);
-  transition:
-    opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1),
-    transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  will-change: transform, opacity;
-}
-
-/* 🔥 Cuando entra en pantalla */
-.section.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 🔥 Cuando sale (opcional si quieres que desaparezca al subir) */
-.section:not(.show) {
+.section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🎯 ESTILOS PARA EL SLIDER */
+
+/* Botones del tab */
+.tab-button {
+  position: relative;
+  color: #9ca3af; /* gray-400 */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.tab-button.active {
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.2); /* blue-500 con opacidad */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.tab-button:hover:not(.active) {
+  color: #e5e7eb; /* gray-200 */
+  background: rgba(75, 85, 99, 0.3); /* gray-600 con opacidad */
+}
+
+/* Contenedor del slider */
+#slider-container {
+  position: relative;
+  min-height: 450px; /* Altura mínima para evitar saltos */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slides del contenido */
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 400px;
+  transition: all 1000ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Slide de "Sobre Mi" - inicialmente visible */
+#slide-about {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 2;
+  position: relative; /* Cambiar a relative para que sea el elemento base */
+}
+
+/* Slide de "Mi Experiencia" - inicialmente oculto */
+#slide-experience {
+  transform: translateX(100%);
   opacity: 0;
-  transform: translateY(80px);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Animaciones para las imágenes */
+#image-about,
+#image-experience {
+  transition: opacity 1000ms ease-in-out;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Estilos del hero aplicados a la imagen de experiencia */
+.hero-style-img {
+  object-fit: contain !important; /* Mejor para SVGs/imágenes sin fondo */
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.2));
+  transition: all 1000ms ease-in-out; /* Mantener transición del slider */
+  z-index: 2;
+}
+
+.hero-style-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+}
+
+/* Cuando está activa en el slider de sobre mi */
+#image-about.hero-style-img {
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3)); /* Blue glow para sobre mi */
+}
+#image-about.hero-style-img:hover {
+  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.4)); /* Blue glow en hover */
+}
+/* Cuando está activa en el slider de experiencia */
+#image-experience.hero-style-img {
+  filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.3)); /* Purple glow para experiencia */
+}
+
+#image-experience.hero-style-img:hover {
+  filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.4)); /* Cyan glow en hover */
+}
+
+/* Decoraciones animadas */
+#decoration-1,
+#decoration-2,
+#decoration-3 {
+  transition: background-color 800ms ease-in-out;
+}
+
+/* Efectos hover para los tabs */
+.tab-button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  transition: width 300ms ease-in-out;
+}
+
+.tab-button.active::after {
+  width: 100%;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  #slider-container {
+    min-height: 350px;
+  }
+  
+  .tab-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }

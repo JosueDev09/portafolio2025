@@ -3,32 +3,76 @@ import './about.css';
 ---
 
 <section
-  id="sobre-mi"
-  class="section relative z-[1] text-white flex items-center justify-center p-6 min-h-screen
-         opacity-0 translate-y-12
-         transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]
-         will-change-transform will-change-opacity overflow-hidden"
+  id="sobre-mi" 
+  class="bg-gray-900 text-white flex items-center justify-center p-6 min-h-[80vh]"
 >
   <div id="about-content" class="max-w-6xl mx-auto w-full">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       
       <!-- Texto -->
-      <div class="space-y-6 text-left lg:pr-8">
-        <!-- Contenido que cambia con parallax -->
-        <div id="text-content" class="transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
-          <h1 id="main-title" class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
-            Sobre Mi
-          </h1>
-          <div id="text-paragraphs">
-            <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
-              ¡Hola! Soy <span class="text-blue-400 font-semibold">Josue Flores</span>, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales.
-            </p>
-            <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
-              Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.
-            </p>
-            <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
-              Cuando no estoy codificando, me gusta explorar la naturaleza, leer libros de tecnología y jugar videojuegos.
-            </p>
+      <div class="space-y-6 text-left lg:pr-8 relative">
+        <!-- Controles del slider -->
+        <div class="flex justify-center lg:justify-start mb-6">
+          <div class="flex bg-gray-800/50 rounded-lg p-1 backdrop-blur-sm">
+            <button 
+              id="tab-about" 
+              class="tab-button active px-4 py-2 rounded-md text-sm font-medium transition-all duration-300"
+            >
+              Sobre Mi
+            </button>
+            <button 
+              id="tab-experience" 
+              class="tab-button px-4 py-2 rounded-md text-sm font-medium transition-all duration-300"
+            >
+              Mi Experiencia
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenedor del slider -->
+        <div id="slider-container" class="relative overflow-hidden">
+          <!-- Slide 1: Sobre Mi -->
+          <div id="slide-about" class="slide-content">
+            <h1 id="title-about" class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+              Sobre Mi
+            </h1>
+            <div id="content-about">
+              <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
+                ¡Hola! Soy <span class="text-blue-400 font-semibold">Josue Flores</span>, un desarrollador web apasionado por crear experiencias digitales atractivas y funcionales.
+              </p>
+              <p class="text-lg lg:text-xl leading-relaxed text-gray-300 mb-4">
+                Me encanta aprender nuevas tecnologías y mejorar mis habilidades constantemente.
+              </p>
+              <p class="text-lg lg:text-xl leading-relaxed text-gray-300">
+                Cuando no estoy codificando, me gusta explorar la naturaleza, leer libros de tecnología y jugar videojuegos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Slide 2: Mi Experiencia -->
+          <div id="slide-experience" class="slide-content">
+            <h1 id="title-experience" class="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]">
+              Mi Experiencia
+            </h1>
+            <div id="content-experience">
+              <div class="space-y-4">
+                <div class="border-l-4 border-purple-500 pl-4">
+                  <h3 class="text-xl font-semibold text-purple-400 mb-2">Desarrollador Full Stack</h3>
+                  <p class="text-gray-300 mb-2">2022 - Presente</p>
+                  <p class="text-gray-400">Desarrollo de aplicaciones web modernas usando React, Node.js, y tecnologías de vanguardia.</p>
+                </div>
+                <div class="border-l-4 border-cyan-500 pl-4">
+                  <h3 class="text-xl font-semibold text-cyan-400 mb-2">Frontend Developer</h3>
+                  <p class="text-gray-300 mb-2">2021 - 2022</p>
+                  <p class="text-gray-400">Especialización en interfaces de usuario interactivas y responsive design.</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                  <h3 class="text-xl font-semibold text-blue-400 mb-2">Freelancer</h3>
+                  <p class="text-gray-300 mb-2">2020 - 2021</p>
+                  <p class="text-gray-400">Proyectos independientes enfocados en desarrollo web y diseño UI/UX.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -45,28 +89,30 @@ import './about.css';
       <!-- Imagen -->
       <div class="relative flex justify-center lg:justify-end">
         <div class="relative">
-          <div id="image-container" class="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
-            <!-- Imagen principal -->
+          <div id="image-container" class="relative z-10 overflow-hidden rounded-2xl hover:shadow-blue-500/20 hover:scale-105
+            transition-all duration-500">
+            <!-- Imagen principal (Sobre Mi) -->
             <img 
-              id="main-image"
-              src="/assets/imgConvertidas/programacionProfile.webp" 
+              id="image-about"
+              src="/assets/imgConvertidas/about1.webp" 
               alt="Josue - Desarrollador Web" 
-              class="w-80 h-96 lg:w-96 lg:h-[28rem] object-cover transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform will-change-opacity"
+              class="hero-style-img w-80 h-96 lg:w-96 lg:h-[28rem] object-cover transition-all duration-1000"
+               style="background: transparent;"
             />
-            <!-- Segunda imagen (oculta inicialmente) - con filtro diferente -->
+            <!-- Imagen secundaria (Mi Experiencia) -->
             <img 
-              id="secondary-image"
-              src="/assets/imgConvertidas/programacionProfile.webp" 
-              alt="Josue - Programador" 
-              class="absolute inset-0 w-80 h-96 lg:w-96 lg:h-[28rem] object-cover opacity-0 transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)] filter sepia-[0.3] hue-rotate-[240deg] saturate-[1.4] will-change-transform will-change-opacity"
+              id="image-experience"
+              src="/assets/imgConvertidas/about1.webp" 
+              alt="Josue - Experiencia" 
+              class="hero-style-img w-80 h-96 lg:w-96 lg:h-[28rem] absolute top-0 left-0 opacity-0 transition-all duration-1000"
+              style="background: transparent;"
             />
-            <div id="image-overlay" class="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]"></div>
           </div>
 
-          <!-- Elementos decorativos que también cambian -->
-          <div id="decoration-1" class="absolute -top-4 -left-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
-          <div id="decoration-2" class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-xl transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
-          <div id="decoration-3" class="absolute top-1/2 -right-8 w-16 h-16 bg-cyan-400/20 rounded-full blur-lg transition-all duration-1200 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-transform"></div>
+          <!-- Elementos decorativos -->
+          <div id="decoration-1" class="absolute -top-4 -left-4 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
+          <div id="decoration-2" class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/20 rounded-full blur-xl"></div>
+          <div id="decoration-3" class="absolute top-1/2 -right-8 w-16 h-16 bg-cyan-400/20 rounded-full blur-lg"></div>
         </div>
       </div>
       
@@ -74,184 +120,154 @@ import './about.css';
   </div>
 </section>
 
-<script>
-  // Configuración del parallax
-  const PARALLAX_TRIGGER = 763;
-  const PARALLAX_DURATION = 400;
-  
-  // Estado para evitar el temblor
-  let isParallaxActive = false;
-  let lastScrollY = 0;
-  let animationFrame = null;
-  let currentProgress = 0;
-  let targetProgress = 0;
-  
-  // Función de interpolación lineal
-  const lerp = (start: number, end: number, factor: number): number => {
-    return start + (end - start) * factor;
-  };
-  
-  // Función de easing suave
-  const easeOutCubic = (t:any) => 1 - Math.pow(1 - t, 3);
-  const easeInOutCubic = (t:any) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-  // Función que se ejecuta cuando carga la página
+
+<script>
+  // 🎯 SLIDER ABOUT/EXPERIENCE CONTROL
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Script de parallax cargado');
+    console.log('🚀 About Slider cargado');
     
     // Elementos del DOM
-    const content = document.getElementById("sobre-mi");
-    const mainTitle = document.getElementById("main-title");
-    const textParagraphs = document.getElementById("text-paragraphs");
-    const mainImage = document.getElementById("main-image");
-    const secondaryImage = document.getElementById("secondary-image");
-    
-    // Verificar que los elementos existen
-    console.log('Elements found:', {
-      content: !!content,
-      mainTitle: !!mainTitle,
-      textParagraphs: !!textParagraphs,
-      mainImage: !!mainImage,
-      secondaryImage: !!secondaryImage
-    });
+    const tabAbout = document.getElementById('tab-about') as HTMLButtonElement;
+    const tabExperience = document.getElementById('tab-experience') as HTMLButtonElement;
+    const slideAbout = document.getElementById('slide-about') as HTMLElement;
+    const slideExperience = document.getElementById('slide-experience') as HTMLElement;
+    const imageAbout = document.getElementById('image-about') as HTMLImageElement;
+    const imageExperience = document.getElementById('image-experience') as HTMLImageElement;
+    const decoration1 = document.getElementById('decoration-1') as HTMLElement;
+    const decoration2 = document.getElementById('decoration-2') as HTMLElement;
+    const decoration3 = document.getElementById('decoration-3') as HTMLElement;
 
-    if (!content) {
-      console.error('❌ Elemento "sobre-mi" no encontrado');
-      return;
+    let currentSlide = 'about'; // Estado actual
+    let autoSlideInterval: ReturnType<typeof setInterval>;
+
+    // Función para cambiar slide
+    function changeSlide(targetSlide: 'about' | 'experience') {
+      if (currentSlide === targetSlide) return;
+
+      console.log(`🔄 Cambiando a: ${targetSlide}`);
+      currentSlide = targetSlide;
+
+      if (targetSlide === 'about') {
+        // Activar slide "Sobre Mi"
+        
+        // Tabs
+        tabAbout?.classList.add('active');
+        tabExperience?.classList.remove('active');
+        
+        // Slides
+        if (slideAbout) {
+          slideAbout.style.position = 'relative';
+          slideAbout.style.transform = 'translateX(0)';
+          slideAbout.style.opacity = '1';
+          slideAbout.style.zIndex = '2';
+        }
+        
+        if (slideExperience) {
+          slideExperience.style.position = 'absolute';
+          slideExperience.style.transform = 'translateX(100%)';
+          slideExperience.style.opacity = '0';
+          slideExperience.style.zIndex = '1';
+        }
+        
+        // Imágenes
+        if (imageAbout) imageAbout.style.opacity = '1';
+        if (imageExperience) imageExperience.style.opacity = '0';
+        
+        console.log('✅ Slide ABOUT activado');
+        
+      } else {
+        // Activar slide "Mi Experiencia"
+        
+        // Tabs
+        tabAbout?.classList.remove('active');
+        tabExperience?.classList.add('active');
+        
+        // Slides
+        if (slideExperience) {
+          slideExperience.style.position = 'absolute';
+          slideExperience.style.top = '0';
+          slideExperience.style.left = '0';
+          slideExperience.style.width = '100%';
+          slideExperience.style.transform = 'translateX(0)';
+          slideExperience.style.opacity = '1';
+          slideExperience.style.zIndex = '2';
+        }
+        
+        if (slideAbout) {
+          slideAbout.style.transform = 'translateX(-100%)';
+          slideAbout.style.opacity = '0';
+          slideAbout.style.zIndex = '1';
+        }
+        
+        // Imágenes
+        if (imageAbout) imageAbout.style.opacity = '0';
+        if (imageExperience) imageExperience.style.opacity = '1';
+        
+        console.log('✅ Slide EXPERIENCE activado');
+        
+        // Debug: Verificar si el contenido está ahí
+        const contentExperience = document.getElementById('content-experience');
+        if (contentExperience) {
+          console.log('📄 Contenido experience encontrado:', contentExperience.innerText.slice(0, 50));
+        } else {
+          console.log('❌ No se encontró content-experience');
+        }
+      }
+      
+      // Decoraciones
+      updateDecorations(targetSlide === 'experience');
     }
 
-    // Estado inicial
-    content.style.opacity = "0";
-    content.style.transform = "translateY(80px)";
-    content.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-
-    // Función para actualizar el título - versión simplificada y estable
-    const updateTitleSmooth = (progress: number) => {
-      if (!mainTitle) return;
-      
-      if (progress > 0.5) {
-        mainTitle.innerHTML = "Mi Experiencia";
-        // Usar clases CSS en lugar de estilos inline
-        mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-500 bg-clip-text text-transparent transition-all duration-500 ease-out";
-      } else {
-        mainTitle.innerHTML = "Sobre Mi";
-        mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-500 ease-out";
-      }
-    };
-
-    // Función para actualizar imagen - versión simplificada
-    const updateImageSmooth = (progress: number) => {
-      if (!mainImage || !secondaryImage) return;
-      
-      const imageProgress = Math.max(0, Math.min(1, (progress - 0.3) / 0.4));
-      
-      mainImage.style.opacity = (1 - imageProgress).toString();
-      secondaryImage.style.opacity = imageProgress.toString();
-    };
-
-    // Función para actualizar decoraciones - versión simplificada
-    const updateDecorationsSmooth = (progress: number) => {
-      const decoration1 = document.getElementById("decoration-1");
-      const decoration2 = document.getElementById("decoration-2");
-      const decoration3 = document.getElementById("decoration-3");
-      
+    // Función para actualizar decoraciones
+    function updateDecorations(isExperience: boolean) {
       if (!decoration1 || !decoration2 || !decoration3) return;
       
-      if (progress > 0.4) {
+      if (isExperience) {
+        // Colores para "Mi Experiencia"
         decoration1.style.backgroundColor = "rgba(147, 51, 234, 0.3)"; // purple
         decoration2.style.backgroundColor = "rgba(6, 182, 212, 0.25)"; // cyan
         decoration3.style.backgroundColor = "rgba(236, 72, 153, 0.25)"; // pink
-      }
-    };
-
-    // Event listener principal - versión estable sin temblor
-    let lastProgress = -1; // Para evitar actualizaciones innecesarias
-    
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-
-      // Efecto de aparición inicial
-      const rect = content.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const visible = 1 - rect.top / windowHeight;
-
-      if (visible > 0.1 && visible <= 1) {
-        const opacity = Math.min(visible * 1.5, 1);
-        const translateY = 80 * (1 - visible);
-        content.style.opacity = opacity.toString();
-        content.style.transform = `translateY(${translateY}px)`;
-      }
-
-      // Efecto parallax cuando scroll >= PARALLAX_TRIGGER
-      if (scrollY >= PARALLAX_TRIGGER && scrollY <= PARALLAX_TRIGGER + PARALLAX_DURATION) {
-        if (!isParallaxActive) {
-          console.log('✨ Parallax ACTIVADO en:', scrollY);
-          isParallaxActive = true;
-        }
-
-        // Calcular progreso directo sin interpolación para evitar temblor
-        const progress = Math.min((scrollY - PARALLAX_TRIGGER) / PARALLAX_DURATION, 1);
-        
-        // Solo actualizar si hay cambio significativo (reduce el temblor)
-        if (Math.abs(progress - lastProgress) > 0.02) {
-          lastProgress = progress;
-          
-          // Aplicar efectos directamente
-          updateTitleSmooth(progress);
-          updateImageSmooth(progress);
-          updateDecorationsSmooth(progress);
-
-          // Cambio gradual del fondo
-          if (progress > 0.6) {
-            const bgOpacity = (progress - 0.6) / 0.4 * 0.7;
-            content.style.background = `linear-gradient(135deg, 
-              rgba(15, 15, 35, ${bgOpacity}) 0%, 
-              rgba(26, 26, 46, ${bgOpacity * 0.8}) 50%, 
-              rgba(22, 33, 62, ${bgOpacity * 0.6}) 100%)`;
-          }
-        }
-        
       } else {
-        if (isParallaxActive) {
-          console.log('⏹️ Parallax DESACTIVADO');
-          isParallaxActive = false;
-          
-          // Resetear suavemente al estado inicial
-          // Resetear inmediatamente al salir del área
-          currentProgress = 0;
-          content.style.background = "";
-          content.style.transform = "translateY(0px)";
-          
-          if (mainTitle) {
-            mainTitle.innerHTML = "Sobre Mi";
-            mainTitle.style.background = "";
-            mainTitle.style.webkitBackgroundClip = "";
-            mainTitle.style.webkitTextFillColor = "";
-            mainTitle.className = "text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent transition-all duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]";
-          }
-          
-          if (mainImage && secondaryImage) {
-            mainImage.style.opacity = "1";
-            mainImage.style.transform = "scale(1)";
-            secondaryImage.style.opacity = "0";
-            secondaryImage.style.transform = "scale(1)";
-          }
-          
-          // Reset decorations
-          const decoration1 = document.getElementById("decoration-1");
-          const decoration2 = document.getElementById("decoration-2");
-          const decoration3 = document.getElementById("decoration-3");
-          
-          if (decoration1) decoration1.style.backgroundColor = "";
-          if (decoration2) decoration2.style.backgroundColor = "";
-          if (decoration3) decoration3.style.backgroundColor = "";
-        }
+        // Colores para "Sobre Mi"
+        decoration1.style.backgroundColor = "rgba(59, 130, 246, 0.2)"; // blue
+        decoration2.style.backgroundColor = "rgba(147, 51, 234, 0.2)"; // purple  
+        decoration3.style.backgroundColor = "rgba(6, 182, 212, 0.2)"; // cyan
       }
-    });
+    }
 
-    // Trigger inicial
-    setTimeout(() => {
-      window.dispatchEvent(new Event('scroll'));
-    }, 100);
+    // Auto-slide cada 8 segundos
+    // function startAutoSlide() {
+    //   autoSlideInterval = setInterval(() => {
+    //     const nextSlide = currentSlide === 'about' ? 'experience' : 'about';
+    //     changeSlide(nextSlide);
+    //   }, 10000);
+    // }
+
+    // function resetAutoSlide() {
+    //   clearInterval(autoSlideInterval);
+    //   startAutoSlide();
+    // }
+
+    // Event listeners para los tabs
+    if (tabAbout) {
+      tabAbout.addEventListener('click', () => {
+        changeSlide('about');
+     //   resetAutoSlide();
+      });
+    }
+
+    if (tabExperience) {
+      tabExperience.addEventListener('click', () => {
+        changeSlide('experience');
+      //  resetAutoSlide();
+      });
+    }
+
+    // Inicializar estado
+    changeSlide('about');
+    //startAutoSlide();
+    
+    console.log('✅ About Slider inicializado');
   });
 </script>

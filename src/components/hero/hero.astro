@@ -3,15 +3,22 @@ import './hero.css';
 ---
 
 
-<section class="w-full hero">
+<header class="w-full h-screen hero">
      <div class="hero-content">
-    <h1>JOSUE ; DEV</h1>
-    <p>Desarrollador Web Full Stack</p>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>JOSUE ; DEV</h1>
+        <p>Desarrollador Web Full Stack</p>
+      </div>
+      <div class="hero-image">
+        <div class="image-decoration-1"></div>
+        <div class="image-decoration-2"></div>
+        <img src="/assets/imgConvertidas/hero2.webp" alt="Josue Profile" class="hero-profile-img">
+        <div class="image-decoration-3"></div>
+      </div>
+    </div>
   </div>
-
-</section>
-
-
+</header>
 
 <script>
   const hero = document.querySelector(".hero") as HTMLElement;
