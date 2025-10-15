@@ -1,0 +1,464 @@
+/* 🎯 FOOTER STYLES */
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Secciones del footer */
+.footer-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.footer-section.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Logo del footer */
+.footer-logo {
+  position: relative;
+}
+
+.footer-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover .footer-logo::after {
+  width: 100%;
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.social-icon:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon.github {
+  background: linear-gradient(135deg, #333 0%, #000 100%);
+  color: white;
+}
+
+.social-icon.linkedin {
+  background: linear-gradient(135deg, #0077b5 0%, #004471 100%);
+  color: white;
+}
+
+.social-icon.whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+}
+
+.social-icon.email {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  color: white;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos del footer */
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 1px;
+}
+
+/* Enlaces del footer */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.footer-link::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 0.625rem;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer-link:hover {
+  color: #3b82f6;
+  transform: translateX(5px);
+}
+
+/* Servicios del footer */
+.footer-service {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  position: relative;
+  display: block;
+  padding-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-service::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-weight: bold;
+}
+
+.footer-service:hover {
+  color: #d1d5db;
+}
+
+/* Contacto del footer */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-item-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-item-footer:hover {
+  color: #d1d5db;
+  transform: translateX(3px);
+}
+
+.contact-item-footer svg {
+  flex-shrink: 0;
+}
+
+/* Disponibilidad en footer */
+.availability-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 0.5rem;
+}
+
+.status-dot-footer {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* Divisor del footer */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(75, 85, 99, 0.5) 50%, transparent 100%);
+  margin: 2rem 0;
+}
+
+/* Bottom del footer */
+.footer-bottom {
+  padding-top: 1rem;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Tech stack */
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tech-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icon:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Botón scroll to top */
+.scroll-top-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.scroll-top-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.scroll-top-btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.scroll-top-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-contact {
+    text-align: center;
+  }
+  
+  .tech-stack {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+  }
+  
+  .footer-bottom .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Efectos adicionales */
+.footer-section:hover {
+  transform: translateY(-2px);
+}
+
+/* Animaciones para tech icons */
+.tech-icon:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.tech-icon:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.tech-icon:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Estados focus para accesibilidad */
+.footer-link:focus,
+.social-icon:focus,
+.scroll-top-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Hover effects para toda la sección */
+footer:hover .footer-section:not(:hover) {
+  opacity: 0.7;
+}
+
+footer .footer-section {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Loading state para scroll button */
+.scroll-top-btn.loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
