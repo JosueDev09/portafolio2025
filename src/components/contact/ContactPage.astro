@@ -439,18 +439,46 @@ import './contactPage.css';
         submitBtn.disabled = true;
 
         try {
-          // Simulate form submission
-          await simulateSubmit();
-          showSuccess();
-          form.reset();
-          
-          // Clear form states
-          document.querySelectorAll('.form-group').forEach(group => {
-            group.classList.remove('filled', 'valid', 'error', 'focused');
+          // Collect form data
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            phone: formData.get('phone'),
+            projectType: formData.get('project-type'),
+            budget: formData.get('budget'),
+            timeline: formData.get('timeline'),
+            message: formData.get('message'),
+            terms: formData.get('terms') ? true : false
+          };
+
+          // Send to API
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
           });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            showSuccess();
+            form.reset();
+            
+            // Clear form states
+            document.querySelectorAll('.form-group').forEach(group => {
+              group.classList.remove('filled', 'valid', 'error', 'focused');
+            });
+          } else {
+            showError(result.message || 'Error al enviar el mensaje. Por favor, inténtalo nuevamente.');
+          }
           
         } catch (error) {
-          showError('Error al enviar el mensaje. Por favor, inténtalo nuevamente.');
+          console.error('Error:', error);
+          showError('Error de conexión. Verifica tu conexión a internet e inténtalo nuevamente.');
         } finally {
           submitBtn.classList.remove('loading');
           submitBtn.disabled = false;
@@ -459,12 +487,6 @@ import './contactPage.css';
     }
 
     // Helper functions
-    async function simulateSubmit() {
-      return new Promise((resolve) => {
-        setTimeout(resolve, 2000);
-      });
-    }
-
     function showSuccess() {
       hideMessages();
       successMessage.classList.remove('hidden');
