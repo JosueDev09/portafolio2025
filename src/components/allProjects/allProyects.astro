@@ -1,0 +1,308 @@
+---
+import "./allProjects.css";
+---
+  
+  <!-- Página de Proyectos -->
+  <section class="bg-gray-900 text-white pt-[13rem] pb-16 px-6 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Header de la página -->
+      <div class="text-center mb-16 mt-[12rem]">
+        <h1 class="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          Mis Proyectos
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Explora mi portafolio de proyectos donde cada línea de código cuenta una historia de innovación, 
+          creatividad y pasión por el desarrollo web y móvil.
+        </p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Móvil</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+      </div>
+      
+      <!-- Grid de proyectos -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Proyecto 1: E-commerce -->
+        <div class="project-card" data-category="web ecommerce">
+          <div class="project-image">
+            <img src="" alt="E-commerce Platform" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Demo</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">TechStore Pro</h3>
+            <p class="project-description">
+              Plataforma completa de e-commerce con carrito de compras, procesamiento de pagos con Stripe, panel administrativo y sistema de inventario en tiempo real.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag react">React</span>
+              <span class="tech-tag node">Node.js</span>
+              <span class="tech-tag mongo">MongoDB</span>
+              <span class="tech-tag stripe">Stripe</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Octubre 2024</span>
+              <span class="project-status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: App Móvil -->
+        <div class="project-card" data-category="mobile">
+          <div class="project-image">
+            <img src="" alt="FitTracker App" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Demo</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">FitTracker Pro</h3>
+            <p class="project-description">
+              Aplicación móvil para seguimiento de ejercicios con sincronización en la nube, estadísticas detalladas y comunidad social integrada.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag react-native">React Native</span>
+              <span class="tech-tag typescript">TypeScript</span>
+              <span class="tech-tag firebase">Firebase</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Septiembre 2024</span>
+              <span class="project-status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Dashboard -->
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="" alt="Analytics Dashboard" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Demo</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-description">
+              Dashboard interactivo para análisis de datos con gráficos en tiempo real, reportes personalizables y exportación de datos.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag vue">Vue.js</span>
+              <span class="tech-tag python">Python</span>
+              <span class="tech-tag postgres">PostgreSQL</span>
+              <span class="tech-tag chartjs">Chart.js</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Agosto 2024</span>
+              <span class="project-status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 4: Landing Page -->
+        <div class="project-card" data-category="web ui-ux">
+          <div class="project-image">
+            <img src="" alt="Corporate Landing" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Demo</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Corporate Landing Pro</h3>
+            <p class="project-description">
+              Landing page corporativa con animaciones avanzadas, formularios inteligentes y optimización SEO completa.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag astro">Astro</span>
+              <span class="tech-tag tailwind">Tailwind</span>
+              <span class="tech-tag gsap">GSAP</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Julio 2024</span>
+              <span class="project-status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 5: API REST -->
+        <div class="project-card" data-category="web">
+          <div class="project-image">
+            <img src="" alt="REST API" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Docs</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">TaskManager API</h3>
+            <p class="project-description">
+              API RESTful completa para gestión de tareas con autenticación JWT, documentación automática y tests integrados.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag express">Express.js</span>
+              <span class="tech-tag mongo">MongoDB</span>
+              <span class="tech-tag jwt">JWT</span>
+              <span class="tech-tag swagger">Swagger</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Junio 2024</span>
+              <span class="project-status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 6: App Social -->
+        <div class="project-card" data-category="mobile web">
+          <div class="project-image">
+            <img src="" alt="Social Network" class="w-full h-full object-cover">
+            <div class="project-overlay">
+              <div class="project-actions">
+                <a href="#" class="btn-demo">Ver Demo</a>
+                <a href="#" class="btn-code">Código</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">DevConnect</h3>
+            <p class="project-description">
+              Red social para desarrolladores con sistema de posts, chat en tiempo real, colaboración en proyectos y portafolios integrados.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag next">Next.js</span>
+              <span class="tech-tag socket">Socket.io</span>
+              <span class="tech-tag redis">Redis</span>
+              <span class="tech-tag docker">Docker</span>
+            </div>
+            <div class="project-meta">
+              <span class="project-date">Mayo 2024</span>
+              <span class="project-status in-progress">En desarrollo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Paginación -->
+      <div class="flex justify-center items-center gap-4 mb-16">
+        <button class="pagination-btn" disabled>
+          ← Anterior
+        </button>
+        <span class="text-gray-400">Página 1 de 2</span>
+        <button class="pagination-btn">
+          Siguiente →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20 text-white py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+        ¿Tienes un Proyecto en Mente?
+      </h2>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Me especializo en convertir ideas innovadoras en realidades digitales. 
+        Creemos algo increíble juntos.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="cta-primary">
+          Iniciar Proyecto
+        </a>
+        <a href="/#contacto" class="cta-secondary">
+          Contactar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+<!-- </Layout> -->
+
+<script is:inline>
+  // 🎯 PROJECTS PAGE FUNCTIONALITY
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Projects page cargada');
+    
+    // Elementos DOM
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    // Función para filtrar proyectos
+    function filterProjects(category) {
+      projectCards.forEach((card, index) => {
+        const cardCategories = card.getAttribute('data-category') || '';
+        
+        if (category === 'all' || cardCategories.includes(category)) {
+          // Mostrar con animación
+          setTimeout(() => {
+            card.style.display = 'block';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          }, index * 100);
+        } else {
+          // Ocultar
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(-20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    // Event listeners para filtros
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const category = this.getAttribute('data-filter') || 'all';
+        
+        // Actualizar botones activos
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filtrar proyectos
+        filterProjects(category);
+      });
+    });
+
+    // Animación de entrada inicial
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    projectCards.forEach(card => {
+      observer.observe(card);
+    });
+
+    console.log('✅ Projects page inicializada');
+  });
+</script>

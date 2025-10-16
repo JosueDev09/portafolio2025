@@ -1,5 +1,18 @@
 ---
+import { getCollection } from 'astro:content';
 import './skills.css';
+
+// Obtener todas las colecciones de skills desde los archivos MD
+const backendSkills = await getCollection('backend-skills');
+const frontendSkills = await getCollection('frontend-skills');  
+const toolsSkills = await getCollection('tools-skills');
+
+// Definir tipo para los skills
+interface SkillData {
+  title: string;
+  level: string;
+  img: string;
+}
 ---
 
 <section
@@ -33,62 +46,21 @@ import './skills.css';
         </div>
         
         <div class="skills-grid">
-          <div class="skill-item" data-level="90">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-logo">
-              <span class="skill-name">React</span>
+          {frontendSkills.map((skill) => (
+            <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
+              <div class="skill-content">
+                <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
+                <span class="skill-name">{skill.data.title}</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style={`width: ${skill.data.level}`}></div>
+              </div>
+              <span class="text-gray-400">{skill.data.level}</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="85">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-logo">
-              <span class="skill-name">TypeScript</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="95">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-logo">
-              <span class="skill-name">JavaScript</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 95%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="88">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" class="skill-logo">
-              <span class="skill-name">Tailwind CSS</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 88%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="80">
-            <div class="skill-content">
-              <svg class="skill-logo" viewBox="0 0 256 256" fill="none">
-                <path fill="#FF5D01" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z"/>
-                <path fill="#FF5D01" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.804-6.272-37.804-15.717 0-.668.148-1.299.42-1.891l27.857-95.232a3.67 3.67 0 017.042-.01l28.198 95.29c.275.614.413 1.282.413 1.981 0 2.451-2.717 4.793-6.322 5.311z"/>
-              </svg>
-              <span class="skill-name">Astro</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <!-- Backend -->
       <div class="skill-category" data-category="backend">
         <div class="skill-header">
           <div class="skill-icon backend-icon">
@@ -100,59 +72,22 @@ import './skills.css';
         </div>
         
         <div class="skills-grid">
-          <div class="skill-item" data-level="85">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-logo">
-              <span class="skill-name">Node.js</span>
+          {backendSkills.map((skill) => (
+            <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
+              <div class="skill-content">
+                <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
+                <span class="skill-name">{skill.data.title}</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style={`width: ${skill.data.level}`}></div>
+              </div>
+              <span class="text-gray-400">{skill.data.level}</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="78">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="skill-logo express-logo">
-              <span class="skill-name">Express</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 78%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="75">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-logo">
-              <span class="skill-name">MongoDB</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="70">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-logo">
-              <span class="skill-name">PostgreSQL</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="72">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
-              <span class="skill-name">Python</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 72%"></div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <!-- Tools & Others -->
+  
       <div class="skill-category" data-category="tools">
         <div class="skill-header">
           <div class="skill-icon tools-icon">
@@ -165,60 +100,23 @@ import './skills.css';
         </div>
         
         <div class="skills-grid">
-          <div class="skill-item" data-level="92">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-logo">
-              <span class="skill-name">Git</span>
+          {toolsSkills.map((skill) => (
+            <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
+              <div class="skill-content">
+                <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
+                <span class="skill-name">{skill.data.title}</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style={`width: ${skill.data.level}`}></div>
+              </div>
+              <span class="text-gray-400">{skill.data.level}</span>
             </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 92%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="88">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-logo">
-              <span class="skill-name">VS Code</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 88%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="82">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-logo">
-              <span class="skill-name">Figma</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 82%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="75">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-logo">
-              <span class="skill-name">Docker</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-
-          <div class="skill-item" data-level="78">
-            <div class="skill-content">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-logo github-logo">
-              <span class="skill-name">GitHub</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 78%"></div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
 
-    <!-- Servicios que ofrezco -->
+   
     <div class="text-center">
       <h3 class="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
         Servicios que Ofrezco
@@ -266,8 +164,7 @@ import './skills.css';
         </div>
       </div>
     </div>
-
-  </div>
+    </div>
 </section>
 
 <script>

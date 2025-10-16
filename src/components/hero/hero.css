@@ -157,8 +157,8 @@
 }
 
 .hero-content p {
+  color: #0077ff;
   font-size: clamp(1.2rem, 3vw, 2rem);
-  color: #d1d5db;
   margin-top: 1rem;
   font-weight: 400;
 }
