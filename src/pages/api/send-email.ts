@@ -140,13 +140,11 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Formatear datos del proyecto
     const projectTypeLabels: Record<string, string> = {
-      'web-app': 'Aplicación Web',
+      'web-app': 'Sistema de Gestión',
       'landing': 'Landing Page',
       'ecommerce': 'E-commerce',
       'portfolio': 'Portafolio',
-      'api': 'API / Backend',
       'mobile': 'App Móvil',
-      'consultation': 'Consultoría',
       'other': 'Otro'
     };
 

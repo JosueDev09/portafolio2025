@@ -1,0 +1,1574 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Proceso de Trabajo - Josue Dev" 
+  description="Documento legal detallando el proceso de trabajo paso a paso para proyectos de desarrollo web. Conoce nuestro marco de trabajo profesional."
+  showMenu={false}
+>
+  <section class="work-process bg-gray-900 text-white pt-32 pb-16 px-6 min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Botón de regreso -->
+      <div class="mb-8">
+        <a href="javascript:history.back()" class="back-btn">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          <span>Volver</span>
+        </a>
+      </div>
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Proceso de Trabajo Legal
+        </h1>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Marco legal y metodológico para el desarrollo de proyectos web. Este documento establece los términos, 
+          condiciones y procedimientos para garantizar un trabajo profesional y transparente.
+        </p>
+        <div class="mt-4 text-sm text-gray-400">
+          <p>Documento vigente desde: <span class="text-green-400">17 de octubre de 2025</span></p>
+          <p>Última revisión: <span class="text-blue-400">17 de octubre de 2025</span></p>
+        </div>
+      </div>
+
+      <!-- Download PDF Section -->
+      <div class="pdf-download-section mb-12">
+        <div class="download-container">
+          <div class="pdf-info">
+            <div class="pdf-icon">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <div class="pdf-details">
+              <h3>Documento Completo en PDF</h3>
+              <p>Descarga el marco legal completo del proceso de trabajo</p>
+              <div class="pdf-meta">
+                <span class="file-size">📄 12 páginas</span>
+                <span class="file-type">📋 PDF Legal</span>
+                <span class="file-date">📅 Oct 2025</span>
+              </div>
+            </div>
+          </div>
+          <div class="download-actions">
+            <a href="/documents/proceso-trabajo-legal.pdf" download class="download-btn primary">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              Descargar PDF
+            </a>
+            <a href="/documents/proceso-trabajo-legal.pdf" target="_blank" class="download-btn secondary">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+              Ver Online
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido Legal -->
+      <div class="legal-content space-y-8">
+
+        <!-- 1. Marco Legal y Alcance -->
+        <div class="legal-section">
+          <h2 class="section-title">1. Marco Legal y Alcance del Documento</h2>
+          <div class="section-content">
+            <div class="legal-notice">
+              <h4>📋 Naturaleza Legal</h4>
+              <p>Este documento constituye un marco legal vinculante que establece los procedimientos, responsabilidades y términos bajo los cuales Josué Dev (en adelante "El Desarrollador") ejecuta proyectos de desarrollo web y aplicaciones.</p>
+            </div>
+            <ul class="info-list">
+              <li><strong>Ámbito de aplicación:</strong> Todos los proyectos de desarrollo web, aplicaciones móviles, sistemas personalizados y servicios de consultoría tecnológica.</li>
+              <li><strong>Vigencia:</strong> Este documento entra en vigor el 17 de octubre de 2025 y permanece vigente hasta nueva revisión.</li>
+              <li><strong>Modificaciones:</strong> Cualquier cambio será notificado con 30 días de anticipación a los clientes activos.</li>
+              <li><strong>Precedencia legal:</strong> En caso de conflicto, este documento prevalece sobre comunicaciones informales previas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Metodología de Trabajo -->
+        <div class="legal-section">
+          <h2 class="section-title">2. Metodología y Fases del Proyecto</h2>
+          <div class="section-content">
+            <p class="mb-4">El proceso de desarrollo sigue una metodología estructurada en 6 fases obligatorias:</p>
+            
+            <div class="process-phases">
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">01</span>
+                  <h4>Consulta Inicial y Análisis</h4>
+                  <span class="phase-duration">1-3 días hábiles</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Reunión de requerimientos:</strong> Análisis detallado de necesidades del cliente</li>
+                    <li><strong>Evaluación técnica:</strong> Determinación de tecnologías y arquitectura óptima</li>
+                    <li><strong>Estimación de recursos:</strong> Cálculo de tiempo, costo y recursos necesarios</li>
+                    <li><strong>Propuesta formal:</strong> Documento vinculante con alcance, timeline y presupuesto</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Propuesta técnica y comercial firmada por ambas partes
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">02</span>
+                  <h4>Planificación y Diseño</h4>
+                  <span class="phase-duration">3-7 días hábiles</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Arquitectura del sistema:</strong> Definición de estructura técnica y base de datos</li>
+                    <li><strong>Wireframes y mockups:</strong> Diseño de interfaz de usuario y experiencia</li>
+                    <li><strong>Especificaciones técnicas:</strong> Documentación detallada de funcionalidades</li>
+                    <li><strong>Plan de desarrollo:</strong> Cronograma detallado con hitos y entregas parciales</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Documentación técnica y diseños aprobados por el cliente
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">03</span>
+                  <h4>Desarrollo e Implementación</h4>
+                  <span class="phase-duration">Variable según proyecto</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Desarrollo modular:</strong> Implementación por módulos con entregas incrementales</li>
+                    <li><strong>Revisiones semanales:</strong> Demos funcionales cada viernes para feedback temprano</li>
+                    <li><strong>Control de versiones:</strong> Uso de Git con repositorio privado para el cliente</li>
+                    <li><strong>Documentación continua:</strong> Documentación de código y funcionalidades en tiempo real</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Aplicación funcional con módulos implementados semanalmente
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">04</span>
+                  <h4>Testing y Calidad</h4>
+                  <span class="phase-duration">2-5 días hábiles</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Testing funcional:</strong> Verificación exhaustiva de todas las funcionalidades</li>
+                    <li><strong>Testing de rendimiento:</strong> Optimización de velocidad y recursos</li>
+                    <li><strong>Testing de seguridad:</strong> Verificación de vulnerabilidades y protección de datos</li>
+                    <li><strong>Testing de compatibilidad:</strong> Verificación en múltiples dispositivos y navegadores</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Reporte de testing y aplicación optimizada lista para producción
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">05</span>
+                  <h4>Despliegue y Puesta en Producción</h4>
+                  <span class="phase-duration">1-2 días hábiles</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Configuración de servidor:</strong> Setup de ambiente de producción optimizado</li>
+                    <li><strong>Migración de datos:</strong> Transferencia segura de información si aplica</li>
+                    <li><strong>Configuración de dominio:</strong> Setup de DNS, SSL y configuraciones de seguridad</li>
+                    <li><strong>Verificación final:</strong> Testing completo en ambiente de producción</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Aplicación completamente funcional en producción
+                  </div>
+                </div>
+              </div>
+
+              <div class="phase-item">
+                <div class="phase-header">
+                  <span class="phase-number">06</span>
+                  <h4>Capacitación y Soporte</h4>
+                  <span class="phase-duration">1-3 días hábiles</span>
+                </div>
+                <div class="phase-content">
+                  <ul class="phase-list">
+                    <li><strong>Capacitación técnica:</strong> Entrenamiento para administración del sistema</li>
+                    <li><strong>Documentación de usuario:</strong> Manuales técnicos y guías de uso</li>
+                    <li><strong>Transferencia de conocimiento:</strong> Explicación de arquitectura y mantenimiento</li>
+                    <li><strong>Periodo de garantía:</strong> 30 días de soporte gratuito post-entrega</li>
+                  </ul>
+                  <div class="phase-deliverable">
+                    <strong>📋 Entregable:</strong> Cliente capacitado con documentación completa y soporte garantizado
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Términos Legales y Responsabilidades -->
+        <div class="legal-section">
+          <h2 class="section-title">3. Términos Legales y Responsabilidades</h2>
+          <div class="section-content">
+            
+            <div class="terms-grid">
+              <div class="term-item">
+                <h4>⚖️ Responsabilidades del Desarrollador</h4>
+                <ul class="term-list">
+                  <li>Cumplimiento de timeline acordado (±5% tolerancia)</li>
+                  <li>Calidad del código según estándares industriales</li>
+                  <li>Confidencialidad absoluta de información del cliente</li>
+                  <li>Disponibilidad de comunicación en horario laboral</li>
+                  <li>Backup diario durante desarrollo</li>
+                  <li>Documentación técnica completa</li>
+                </ul>
+              </div>
+
+              <div class="term-item">
+                <h4>👥 Responsabilidades del Cliente</h4>
+                <ul class="term-list">
+                  <li>Suministro oportuno de contenido y assets</li>
+                  <li>Feedback en máximo 3 días hábiles</li>
+                  <li>Pagos según cronograma establecido</li>
+                  <li>Acceso a sistemas/servidores cuando sea necesario</li>
+                  <li>Disponibilidad para reuniones programadas</li>
+                  <li>Comunicación clara de cambios de requerimientos</li>
+                </ul>
+              </div>
+
+              <div class="term-item">
+                <h4>💰 Términos de Pago</h4>
+                <ul class="term-list">
+                  <li><strong>Anticipo:</strong> 40% al firmar contrato</li>
+                  <li><strong>Progreso:</strong> 40% al 70% de avance</li>
+                  <li><strong>Final:</strong> 20% al entregar proyecto</li>
+                  <li><strong>Tolerancia:</strong> 5 días calendario por pago</li>
+                  <li><strong>Mora:</strong> 2% mensual sobre saldo vencido</li>
+                  <li><strong>Moneda:</strong> USD o moneda local equivalente</li>
+                </ul>
+              </div>
+
+              <div class="term-item">
+                <h4>🔄 Política de Cambios</h4>
+                <ul class="term-list">
+                  <li><strong>Cambios menores:</strong> Sin costo adicional (±5% funcionalidad)</li>
+                  <li><strong>Cambios mayores:</strong> Requieren nuevo acuerdo y cotización</li>
+                  <li><strong>Cambios de diseño:</strong> Máximo 2 revisiones incluidas</li>
+                  <li><strong>Funcionalidad adicional:</strong> Cotización por separado</li>
+                  <li><strong>Cambios tardíos:</strong> Recargo del 25% si son en fase final</li>
+                  <li><strong>Aprobación:</strong> Todo cambio debe ser por escrito</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Garantías y Soporte -->
+        <div class="legal-section">
+          <h2 class="section-title">4. Garantías y Política de Soporte</h2>
+          <div class="section-content">
+            
+            <div class="warranty-section">
+              <h3 class="warranty-title">🛡️ Garantías Incluidas</h3>
+              <div class="warranty-grid">
+                <div class="warranty-item">
+                  <h4>Garantía de Funcionalidad</h4>
+                  <p><strong>Duración:</strong> 30 días desde entrega</p>
+                  <p><strong>Cobertura:</strong> Corrección de bugs y errores de funcionamiento sin costo</p>
+                  <p><strong>Exclusiones:</strong> Cambios de hosting, modificaciones de terceros, fuerza mayor</p>
+                </div>
+                
+                <div class="warranty-item">
+                  <h4>Garantía de Código</h4>
+                  <p><strong>Duración:</strong> 6 meses desde entrega</p>
+                  <p><strong>Cobertura:</strong> Acceso al código fuente y documentación técnica</p>
+                  <p><strong>Compromiso:</strong> Código limpio, comentado y siguiendo mejores prácticas</p>
+                </div>
+
+                <div class="warranty-item">
+                  <h4>Garantía de Soporte</h4>
+                  <p><strong>Duración:</strong> 30 días desde entrega</p>
+                  <p><strong>Cobertura:</strong> Resolución de dudas técnicas y soporte de uso</p>
+                  <p><strong>Tiempo de respuesta:</strong> Máximo 24 horas en días hábiles</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="support-section">
+              <h3 class="support-title">🔧 Política de Soporte Post-Entrega</h3>
+              <div class="support-plans">
+                <div class="support-plan free">
+                  <h4>Soporte Gratuito (30 días)</h4>
+                  <ul>
+                    <li>✅ Corrección de bugs reportados</li>
+                    <li>✅ Soporte técnico básico</li>
+                    <li>✅ Respuesta en 24 horas</li>
+                    <li>✅ Documentación y capacitación</li>
+                    <li>❌ Nuevas funcionalidades</li>
+                    <li>❌ Cambios de diseño</li>
+                  </ul>
+                </div>
+                
+                <div class="support-plan extended">
+                  <h4>Soporte Extendido (Opcional)</h4>
+                  <ul>
+                    <li>✅ Todo lo del plan gratuito</li>
+                    <li>✅ Mantenimiento preventivo</li>
+                    <li>✅ Actualizaciones de seguridad</li>
+                    <li>✅ Backup automatizado</li>
+                    <li>✅ Monitoreo de rendimiento</li>
+                    <li>💰 $50-100 USD/mes según complejidad</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Entregables del Proyecto Final -->
+        <div class="legal-section">
+          <h2 class="section-title">5. Entregables del Proyecto Final</h2>
+          <div class="section-content">
+            <div class="deliverables-notice">
+              <h4>📦 Paquete Completo de Entrega</h4>
+              <p>Al finalizar el proyecto, el cliente recibirá un paquete completo que incluye todos los elementos necesarios para operar, mantener y entender el sistema desarrollado.</p>
+            </div>
+
+            <div class="deliverables-categories">
+              
+              <!-- Código y Aplicación -->
+              <div class="deliverable-category">
+                <h4>💻 Código y Aplicación</h4>
+                <div class="deliverable-items">
+                  <div class="deliverable-item">
+                    <h5>🌐 Aplicación Web Funcional</h5>
+                    <ul class="deliverable-list">
+                      <li>Aplicación completamente funcional y optimizada</li>
+                      <li>Responsive design para todos los dispositivos</li>
+                      <li>Optimizada para velocidad y SEO</li>
+                      <li>Testing completo y libre de bugs críticos</li>
+                      <li>Configuración de producción lista para uso</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="deliverable-item">
+                    <h5>📁 Código Fuente Completo</h5>
+                    <ul class="deliverable-list">
+                      <li>Repositorio Git privado con historial completo</li>
+                      <li>Código limpio y bien comentado</li>
+                      <li>Estructura de archivos organizada y estándar</li>
+                      <li>Variables de entorno configuradas</li>
+                      <li>Scripts de deployment y automatización</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Documentación -->
+              <div class="deliverable-category">
+                <h4>📚 Documentación Completa</h4>
+                <div class="deliverable-items">
+                  <div class="deliverable-item">
+                    <h5>📖 Manual Técnico</h5>
+                    <ul class="deliverable-list">
+                      <li>Arquitectura del sistema y componentes</li>
+                      <li>Instalación y configuración del entorno</li>
+                      <li>Guía de deployment y actualizaciones</li>
+                      <li>Documentación de API y endpoints</li>
+                      <li>Troubleshooting y solución de problemas comunes</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="deliverable-item">
+                    <h5>👥 Manual de Usuario</h5>
+                    <ul class="deliverable-list">
+                      <li>Guía paso a paso para administradores</li>
+                      <li>Tutorial de funcionalidades principales</li>
+                      <li>Screenshots y videos explicativos</li>
+                      <li>FAQ y preguntas frecuentes</li>
+                      <li>Guía de mejores prácticas de uso</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Configuración y Accesos -->
+              <div class="deliverable-category">
+                <h4>🔧 Configuración y Accesos</h4>
+                <div class="deliverable-items">
+                  <div class="deliverable-item">
+                    <h5>🌍 Servidor y Hosting</h5>
+                    <ul class="deliverable-list">
+                      <li>Aplicación desplegada en servidor de producción</li>
+                      <li>Dominio configurado y SSL instalado</li>
+                      <li>Base de datos configurada y optimizada</li>
+                      <li>Backup automático configurado</li>
+                      <li>Monitoreo de uptime y rendimiento</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="deliverable-item">
+                    <h5>🔑 Credenciales y Accesos</h5>
+                    <ul class="deliverable-list">
+                      <li>Accesos de administrador completos</li>
+                      <li>Credenciales de hosting y base de datos</li>
+                      <li>Acceso al repositorio de código</li>
+                      <li>Cuentas de servicios externos (si aplica)</li>
+                      <li>Documentación de seguridad y contraseñas</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Capacitación y Soporte -->
+              <div class="deliverable-category">
+                <h4>🎓 Capacitación y Transferencia</h4>
+                <div class="deliverable-items">
+                  <div class="deliverable-item">
+                    <h5>👨‍🏫 Sesiones de Capacitación</h5>
+                    <ul class="deliverable-list">
+                      <li>2-3 sesiones de entrenamiento personalizadas</li>
+                      <li>Grabación de sesiones para referencia futura</li>
+                      <li>Entrenamiento en administración del sistema</li>
+                      <li>Capacitación en creación/edición de contenido</li>
+                      <li>Resolución de dudas y consultas técnicas</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="deliverable-item">
+                    <h5>🛠️ Herramientas de Mantenimiento</h5>
+                    <ul class="deliverable-list">
+                      <li>Scripts de backup y restauración</li>
+                      <li>Herramientas de monitoreo configuradas</li>
+                      <li>Dashboard de analytics y estadísticas</li>
+                      <li>Alertas de seguridad y rendimiento</li>
+                      <li>Guías de mantenimiento preventivo</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Garantías y Legales -->
+              <div class="deliverable-category">
+                <h4>⚖️ Documentos Legales y Garantías</h4>
+                <div class="deliverable-items">
+                  <div class="deliverable-item">
+                    <h5>📋 Documentación Legal</h5>
+                    <ul class="deliverable-list">
+                      <li>Contrato de entrega firmado y validado</li>
+                      <li>Certificado de transferencia de derechos</li>
+                      <li>Licencias de software y componentes</li>
+                      <li>Política de privacidad y términos de uso</li>
+                      <li>Documentación de compliance y seguridad</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="deliverable-item">
+                    <h5>🛡️ Garantías Incluidas</h5>
+                    <ul class="deliverable-list">
+                      <li>30 días de garantía contra bugs</li>
+                      <li>30 días de soporte técnico gratuito</li>
+                      <li>6 meses de garantía de código</li>
+                      <li>Derecho a actualizaciones menores</li>
+                      <li>Asistencia en migración inicial</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Cronograma de Entrega -->
+            <div class="delivery-timeline">
+              <h3 class="timeline-title">📅 Cronograma de Entrega</h3>
+              <div class="timeline-items">
+                <div class="timeline-item">
+                  <div class="timeline-phase">Día -7</div>
+                  <div class="timeline-content">
+                    <h4>Pre-entrega</h4>
+                    <p>Preparación de documentación y testing final</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-phase">Día 0</div>
+                  <div class="timeline-content">
+                    <h4>Entrega Principal</h4>
+                    <p>Aplicación funcional, código fuente y documentación técnica</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-phase">Día +3</div>
+                  <div class="timeline-content">
+                    <h4>Capacitación</h4>
+                    <p>Primera sesión de entrenamiento y transferencia de conocimiento</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-phase">Día +7</div>
+                  <div class="timeline-content">
+                    <h4>Seguimiento</h4>
+                    <p>Segunda sesión de capacitación y resolución de dudas</p>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-phase">Día +30</div>
+                  <div class="timeline-content">
+                    <h4>Cierre</h4>
+                    <p>Evaluación final, últimas consultas y cierre formal del proyecto</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formato de Entrega -->
+            <div class="delivery-format">
+              <h3 class="format-title">📦 Formato y Modalidad de Entrega</h3>
+              <div class="format-grid">
+                <div class="format-item">
+                  <h4>💾 Entrega Digital</h4>
+                  <ul class="format-list">
+                    <li>Repositorio Git privado compartido</li>
+                    <li>Documentación en formato PDF y web</li>
+                    <li>Videos de capacitación en MP4</li>
+                    <li>Credenciales en archivo encriptado</li>
+                  </ul>
+                </div>
+                
+                <div class="format-item">
+                  <h4>🌐 Entrega en Vivo</h4>
+                  <ul class="format-list">
+                    <li>Aplicación funcionando en producción</li>
+                    <li>Demostración en vivo completa</li>
+                    <li>Sesiones de capacitación remotas</li>
+                    <li>Soporte en tiempo real</li>
+                  </ul>
+                </div>
+                
+                <div class="format-item">
+                  <h4>📧 Comunicación</h4>
+                  <ul class="format-list">
+                    <li>Email de confirmación de entrega</li>
+                    <li>Canal dedicado para consultas</li>
+                    <li>Reportes de progreso semanales</li>
+                    <li>Documentos firmados digitalmente</li>
+                  </ul>
+                </div>
+                
+                <div class="format-item">
+                  <h4>🔒 Seguridad</h4>
+                  <ul class="format-list">
+                    <li>Transferencia de archivos encriptada</li>
+                    <li>Accesos protegidos con 2FA</li>
+                    <li>Backup de seguridad incluido</li>
+                    <li>Verificación de integridad de archivos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Propiedad Intelectual -->
+        <div class="legal-section">
+          <h2 class="section-title">6. Propiedad Intelectual y Derechos de Autor</h2>
+          <div class="section-content">
+            <div class="ip-notice">
+              <h4>📝 Transferencia de Derechos</h4>
+              <p>Una vez completado el pago total del proyecto, todos los derechos de propiedad intelectual del código desarrollado específicamente para el cliente se transfieren al cliente.</p>
+            </div>
+
+            <div class="ip-details">
+              <div class="ip-section">
+                <h4>✅ Derechos que se transfieren al cliente:</h4>
+                <ul class="ip-list">
+                  <li>Código fuente desarrollado específicamente para el proyecto</li>
+                  <li>Diseños y elementos gráficos creados exclusivamente</li>
+                  <li>Documentación técnica del proyecto</li>
+                  <li>Base de datos y estructura de información</li>
+                  <li>Derecho de modificación y distribución del código</li>
+                </ul>
+              </div>
+
+              <div class="ip-section">
+                <h4>🔒 Derechos que mantiene el desarrollador:</h4>
+                <ul class="ip-list">
+                  <li>Librerías y frameworks de código abierto utilizados</li>
+                  <li>Metodologías y procesos de desarrollo propios</li>
+                  <li>Conocimiento técnico y experiencia adquirida</li>
+                  <li>Derecho a usar el proyecto como referencia (con autorización)</li>
+                  <li>Código base reutilizable no específico del cliente</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Contacto Legal -->
+        <div class="legal-section">
+          <h2 class="section-title">7. Contacto Legal y Resolución de Disputas</h2>
+          <div class="section-content">
+            <div class="contact-legal">
+              <div class="legal-contact-info">
+                <h4>📧 Contacto para Asuntos Legales</h4>
+                <p><strong>Email principal:</strong> <a href="mailto:esymbel.mkt2025@gmail.com">esymbel.mkt2025@gmail.com</a></p>
+                <p><strong>Asunto legal:</strong> "LEGAL - [Descripción del asunto]"</p>
+                <p><strong>Tiempo de respuesta:</strong> Máximo 48 horas en días hábiles</p>
+                <p><strong>Documentación requerida:</strong> Adjuntar contratos y comunicaciones relevantes</p>
+              </div>
+
+              <div class="dispute-resolution">
+                <h4>⚖️ Resolución de Disputas</h4>
+                <ol class="resolution-steps">
+                  <li><strong>Negociación directa:</strong> Comunicación directa entre las partes (15 días)</li>
+                  <li><strong>Mediación:</strong> Intervención de mediador neutral si es necesario (30 días)</li>
+                  <li><strong>Arbitraje:</strong> Proceso de arbitraje vinculante según legislación local</li>
+                  <li><strong>Jurisdicción:</strong> Tribunales competentes del lugar de residencia del desarrollador</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Legal -->
+      <div class="legal-footer">
+        <div class="footer-content">
+          <h3>Declaración de Validez Legal</h3>
+          <p>
+            Este documento constituye un acuerdo legalmente vinculante entre Josué Dev y el cliente. 
+            Al contratar servicios o firmar propuestas, el cliente acepta estar sujeto a estos términos y condiciones. 
+            Este marco legal está diseñado para proteger los intereses de ambas partes y garantizar 
+            un proceso de desarrollo transparente, profesional y exitoso.
+          </p>
+          <div class="legal-signature">
+            <p><strong>Desarrollador:</strong> Josué Dev</p>
+            <p><strong>Fecha de vigencia:</strong> 17 de octubre de 2025</p>
+            <p><strong>Versión del documento:</strong> 1.0</p>
+          </div>
+        </div>
+        
+        <div class="actions">
+          <a href="/contact" class="cta-button">
+            <span>Iniciar Proyecto</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* 🎨 ESTILOS DEL DOCUMENTO LEGAL DE PROCESO DE TRABAJO */
+    
+    .work-process {
+      line-height: 1.7;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .back-btn:hover {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* PDF Download Section */
+    .pdf-download-section {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .download-container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .pdf-info {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+    }
+
+    .pdf-icon {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .pdf-details h3 {
+      color: #f1f5f9;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .pdf-details p {
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .pdf-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+
+    .download-actions {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      justify-content: center;
+      min-width: 150px;
+    }
+
+    .download-btn.primary {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .download-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+    }
+
+    .download-btn.secondary {
+      background: rgba(59, 130, 246, 0.1);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .download-btn.secondary:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    /* Legal Content */
+    .legal-content {
+      font-size: 16px;
+    }
+
+    .legal-section {
+      background: rgba(30, 41, 59, 0.3);
+      border: 1px solid rgba(34, 197, 94, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #22c55e;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .section-content {
+      color: #e2e8f0;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .info-list li {
+      padding: 0.75rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .legal-notice {
+      background: rgba(249, 115, 22, 0.1);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .legal-notice h4 {
+      color: #fb923c;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .legal-notice p {
+      color: #fed7aa;
+      margin: 0;
+    }
+
+    /* Process Phases */
+    .process-phases {
+      space-y: 2rem;
+    }
+
+    .phase-item {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .phase-item:hover {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .phase-number {
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .phase-header h4 {
+      color: #f1f5f9;
+      font-size: 1.25rem;
+      font-weight: 600;
+      flex: 1;
+      margin: 0;
+    }
+
+    .phase-duration {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      background: rgba(71, 85, 105, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .phase-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .phase-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      color: #cbd5e1;
+    }
+
+    .phase-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .phase-deliverable {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      color: #bbf7d0;
+      font-size: 0.9rem;
+    }
+
+    /* Terms Grid */
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .term-item {
+      background: rgba(59, 130, 246, 0.05);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .term-item h4 {
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .term-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .term-list li {
+      color: #e2e8f0;
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .term-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    /* Warranty Section */
+    .warranty-section {
+      margin: 2rem 0;
+    }
+
+    .warranty-title {
+      color: #22c55e;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .warranty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .warranty-item {
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .warranty-item h4 {
+      color: #22c55e;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .warranty-item p {
+      color: #cbd5e1;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Support Plans */
+    .support-section {
+      margin: 2rem 0;
+    }
+
+    .support-title {
+      color: #3b82f6;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .support-plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .support-plan {
+      border-radius: 12px;
+      padding: 2rem;
+      border: 2px solid;
+    }
+
+    .support-plan.free {
+      background: rgba(34, 197, 94, 0.05);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .support-plan.extended {
+      background: rgba(139, 92, 246, 0.05);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .support-plan h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .support-plan.free h4 {
+      color: #22c55e;
+    }
+
+    .support-plan.extended h4 {
+      color: #8b5cf6;
+    }
+
+    .support-plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .support-plan li {
+      padding: 0.5rem 0;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    /* IP Section */
+    .ip-notice {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ip-notice h4 {
+      color: #a78bfa;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .ip-notice p {
+      color: #ddd6fe;
+      margin: 0;
+    }
+
+    .ip-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .ip-section {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(71, 85, 105, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .ip-section h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .ip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ip-list li {
+      color: #cbd5e1;
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .ip-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #8b5cf6;
+      font-weight: bold;
+    }
+
+    /* Deliverables Section */
+    .deliverables-notice {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .deliverables-notice h4 {
+      color: #60a5fa;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .deliverables-notice p {
+      color: #dbeafe;
+      margin: 0;
+    }
+
+    .deliverables-categories {
+      space-y: 2rem;
+    }
+
+    .deliverable-category {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .deliverable-category h4 {
+      color: #22c55e;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .deliverable-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .deliverable-item {
+      background: rgba(30, 41, 59, 0.3);
+      border: 1px solid rgba(71, 85, 105, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .deliverable-item h5 {
+      color: #93c5fd;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .deliverable-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .deliverable-list li {
+      color: #cbd5e1;
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .deliverable-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    /* Delivery Timeline */
+    .delivery-timeline {
+      background: rgba(139, 92, 246, 0.05);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .timeline-title {
+      color: #a78bfa;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .timeline-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .timeline-phase {
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .timeline-content h4 {
+      color: #e2e8f0;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .timeline-content p {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    /* Delivery Format */
+    .delivery-format {
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .format-title {
+      color: #22c55e;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .format-item {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .format-item:hover {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: rgba(34, 197, 94, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .format-item h4 {
+      color: #22c55e;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .format-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .format-list li {
+      color: #cbd5e1;
+      padding: 0.5rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.875rem;
+    }
+
+    .format-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    /* Contact Legal */
+    .contact-legal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .legal-contact-info,
+    .dispute-resolution {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .legal-contact-info h4,
+    .dispute-resolution h4 {
+      color: #fca5a5;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .legal-contact-info p {
+      color: #cbd5e1;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .legal-contact-info a {
+      color: #ef4444;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .legal-contact-info a:hover {
+      color: #fca5a5;
+      text-decoration: underline;
+    }
+
+    .resolution-steps {
+      color: #cbd5e1;
+      padding-left: 1.25rem;
+    }
+
+    .resolution-steps li {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Legal Footer */
+    .legal-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .footer-content {
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-content h3 {
+      color: #22c55e;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .footer-content p {
+      color: #cbd5e1;
+      margin: 0 0 1.5rem 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .legal-signature {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .legal-signature p {
+      color: #94a3b8;
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(34, 197, 94, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .download-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .download-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .legal-section {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+      }
+
+      .terms-grid,
+      .warranty-grid,
+      .support-plans,
+      .ip-details,
+      .contact-legal,
+      .deliverable-items,
+      .format-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .timeline-phase {
+        align-self: flex-start;
+      }
+
+      .phase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .phase-number {
+        align-self: flex-start;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animaciones de entrada para secciones
+      const sections = document.querySelectorAll('.legal-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement;
+            target.style.opacity = '1';
+            target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Aplicar animaciones de entrada
+      sections.forEach((section, index) => {
+        const element = section as HTMLElement;
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(section);
+      });
+
+      // Smooth scroll para navegación interna
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e: Event) {
+          e.preventDefault();
+          const target = document.querySelector((e.currentTarget as HTMLAnchorElement).getAttribute('href') || '');
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      console.log('⚖️ Documento Legal de Proceso de Trabajo cargado - Marco legal establecido');
+    });
+  </script>
+</Layout>

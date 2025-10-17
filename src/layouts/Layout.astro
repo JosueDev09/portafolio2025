@@ -1,9 +1,11 @@
 ---
 import Menu from "../components/menu/menu"
 import Footer from "../components/footer/footer.astro";
+import { ClientRouter } from "astro:transitions";
 const { 
   title = "Josué Dev - Desarrollador Full Stack",
-  description = "Desarrollador Full Stack especializado en React, Node.js, Astro y tecnologías modernas. Creando experiencias digitales excepcionales."
+  description = "Desarrollador Full Stack especializado en React, Node.js, Astro y tecnologías modernas. Creando experiencias digitales excepcionales.",
+  showMenu = true
 } = Astro.props;
 ---
 
@@ -35,27 +37,32 @@ const {
 		<meta name="twitter:description" content={description} />
 		
 		<meta name="generator" content={Astro.generator} />
+     
 	</head>
 
 	<body>
-		<!-- Menú fijo -->
-		<header class="menu-fijo">
-			<Menu client:load />
-		</header>
+		<!-- Menú fijo - Solo se muestra si showMenu es true -->
+		{showMenu && (
+			<header class="menu-fijo">
+				<Menu client:load />
+			</header>
+		)}
 
 		<!-- Contenedor del contenido desplazable -->
 		<div id="scroll-wrapper">
 			<main>
 			<slot />
 			</main>
+			<Footer/>
 		</div>
-     <Footer/>
 	</body>
 </html>
 
 <style is:global>
   @import 'tailwindcss';  
   @plugin "@midudev/tailwind-animations";
+
+  
 
   :root{
      background: linear-gradient(
