@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="CV - Josué Flores | Desarrollador Full Stack"
+  description="Currículum Vitae completo de Josué Flores - Desarrollador Full Stack especializado en .NET, Node.js, Angular, React y desarrollo de sistemas empresariales."
+    showMenu={false}
+  >
+  <main class="bg-gray-900 text-white min-h-screen">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+          Currículum Vitae
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Desarrollador Full Stack con experiencia en .NET, Node.js, Angular y React. Apasionado por crear sistemas inteligentes y soluciones digitales que optimicen procesos empresariales.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="/assets/cv/Josue-Flores-CV.pdf" 
+            download="Josue-Flores-CV.pdf"
+            class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-3"
+          >
+            <svg class="w-5 h-5 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Descargar CV en PDF
+          </a>
+          <a 
+            href="/contact" 
+            class="border border-blue-400 hover:bg-blue-400/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+          >
+            Contáctame
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Información Personal -->
+    <section class="py-16 bg-gray-800/30">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          
+          <!-- Foto e Información -->
+          <div class="lg:col-span-1">
+            <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
+              <div class="text-center mb-8">
+                <img 
+                  src="/assets/imgConvertidas/about1.webp" 
+                  alt="Josué Flores" 
+                  class="w-48 h-48 rounded-full mx-auto mb-6 object-cover border-4 border-blue-500/30 shadow-xl"
+                />
+                <h2 class="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  Josué Flores
+                </h2>
+                <p class="text-xl text-blue-400 mb-4">Desarrollador Full Stack</p>
+                
+                <!-- Enlaces sociales -->
+                <div class="flex justify-center space-x-4 mb-6">
+                  <a href="mailto:josueflores13199@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors" title="Email">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                  </a>
+                  <a href="https://github.com/JosueFG" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors" title="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                  <a href="https://josuefg.com/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors" title="Portfolio">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              
+              <!-- Información de contacto -->
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                  </svg>
+                  <span class="text-gray-300">josueflores13199@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                  <span class="text-gray-300">+52 55 8489 3998</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-300">Puebla, México</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenido Principal -->
+          <div class="lg:col-span-2 space-y-12">
+          
+          <!-- Perfil Profesional -->
+          <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
+            <h3 class="text-2xl font-bold mb-6 text-blue-400 flex items-center">
+              <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+              </svg>
+              Perfil Profesional
+            </h3>
+            <p class="text-gray-300 leading-relaxed text-lg">
+              Ingeniero en Ciencias de la Computación enfocado en desarrollo web Full Stack.  
+              Experiencia en la construcción de sistemas empresariales, chatbots inteligentes y soluciones escalables usando .NET, Node.js, Angular, React y SQL Server.  
+              Me motiva crear software funcional y elegante que optimice procesos reales dentro de las empresas.
+            </p>
+          </div>
+
+          <!-- Experiencia Laboral -->
+          <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
+            <h3 class="text-2xl font-bold mb-6 text-purple-400 flex items-center">
+              <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              </svg>
+              Experiencia Laboral
+            </h3>
+            
+            <div class="space-y-8">
+              <div class="border-l-4 border-purple-500 pl-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                  <h4 class="text-xl font-semibold text-white">Desarrollador Full Stack</h4>
+                  <span class="text-purple-400 font-medium">Mayo 2023 - Presente</span>
+                </div>
+                <p class="text-cyan-400 mb-3 font-medium">Marfil Constructora</p>
+                <ul class="text-gray-300 space-y-2">
+                  <li>• Desarrollo de sistemas internos con .NET Framework 6/7/8 y Node.js</li>
+                  <li>• Creación de chatbot de WhatsApp con Twilio para automatizar generación de leads</li>
+                  <li>• Implementación de lógica de negocio con procedimientos almacenados en SQL Server</li>
+                  <li>• Mantenimiento de múltiples sistemas críticos para operaciones internas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyectos Destacados -->
+          <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
+            <h3 class="text-2xl font-bold mb-6 text-cyan-400 flex items-center">
+              <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+              </svg>
+              Proyectos Destacados
+            </h3>
+            
+            <div class="space-y-6">
+              <div class="border-l-4 border-blue-500 pl-6">
+                <h4 class="text-lg font-semibold text-white mb-2">E-commerce Full Stack</h4>
+                <p class="text-gray-300 mb-2">Angular 17 · Node.js 20 · MySQL</p>
+                <p class="text-gray-400">Desarrollo de plataforma de eCommerce con pasarela de pagos segura, panel administrativo y diseño centrado en UX.</p>
+              </div>
+              
+              <div class="border-l-4 border-green-500 pl-6">
+                <h4 class="text-lg font-semibold text-white mb-2">Sistema de Gestión de Citas Médicas</h4>
+                <p class="text-gray-300 mb-2">Next.js 15 · TailwindCSS · MySQL</p>
+                <p class="text-gray-400">Sistema con autenticación, agenda médica, registro por código QR y diseño responsivo.</p>
+              </div>
+              
+              <div class="border-l-4 border-purple-500 pl-6">
+                <h4 class="text-lg font-semibold text-white mb-2">Landing Pages Modernas</h4>
+                <p class="text-gray-300 mb-2">Astro · React · SEO</p>
+                <p class="text-gray-400">Sitios optimizados para velocidad y posicionamiento, con efectos scroll y diseño adaptable.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Educación -->
+          <div class="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm border border-gray-700/50">
+            <h3 class="text-2xl font-bold mb-6 text-blue-400 flex items-center">
+              <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Educación
+            </h3>
+            <div class="border-l-4 border-blue-500 pl-6">
+              <h4 class="text-lg font-semibold text-white">Ingeniería en Informática</h4>
+              <p class="text-blue-400 mb-2">Instituto de Estudios Superiores A.C (BUAP)</p>
+              <p class="text-gray-400">En proceso de titulación</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Técnicas -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Habilidades Técnicas
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Frontend -->
+          <div class="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50">
+            <h4 class="text-xl font-semibold mb-4 text-blue-400">Frontend</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">React / Next.js</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-blue-500 h-2 rounded-full w-4/5"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">Angular</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-blue-500 h-2 rounded-full w-4/5"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">TypeScript</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-blue-500 h-2 rounded-full w-3/4"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">TailwindCSS</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-blue-500 h-2 rounded-full w-4/5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50">
+            <h4 class="text-xl font-semibold mb-4 text-purple-400">Backend</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">.NET Core</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-purple-500 h-2 rounded-full w-5/6"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">Node.js</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-purple-500 h-2 rounded-full w-4/5"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">C#</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-purple-500 h-2 rounded-full w-5/6"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">Python</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-purple-500 h-2 rounded-full w-3/5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases & Tools -->
+          <div class="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700/50">
+            <h4 class="text-xl font-semibold mb-4 text-cyan-400">Databases & Tools</h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">SQL Server</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-cyan-500 h-2 rounded-full w-5/6"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">MySQL</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-cyan-500 h-2 rounded-full w-4/5"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">Git / GitHub</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-cyan-500 h-2 rounded-full w-5/6"></div>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-300">Twilio API</span>
+                <div class="w-20 bg-gray-700 rounded-full h-2">
+                  <div class="bg-cyan-500 h-2 rounded-full w-3/4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section class="py-20 bg-gradient-to-r from-blue-900/20 to-purple-900/20">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h3 class="text-3xl font-bold mb-6 text-white">
+          ¿Interesado en trabajar conmigo?
+        </h3>
+        <p class="text-xl text-gray-300 mb-8">
+          Estoy disponible para proyectos freelance y oportunidades laborales
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/assets/cv/Josue-Flores-CV.pdf" 
+            download="Josue-Flores-CV.pdf"
+            class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+          >
+            <svg class="w-5 h-5 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Descargar CV Completo
+          </a>
+          <a 
+            href="/contact" 
+            class="border border-blue-400 hover:bg-blue-400/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+          >
+            Enviar Mensaje
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

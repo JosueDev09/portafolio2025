@@ -1,5 +1,5 @@
 ---
     title: GitHub
-    level: 80%
+    level: 50%
     img: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
 ---

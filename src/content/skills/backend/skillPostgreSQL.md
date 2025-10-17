@@ -1,5 +1,5 @@
 ---
     title: PostgreSQL
-    level: 70%
+    level: 20%
     img: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg
 ---

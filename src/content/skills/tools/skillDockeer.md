@@ -1,5 +1,5 @@
 ---
     title: Docker
-    level: 45%
+    level: 25%
     img: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg
 ---
