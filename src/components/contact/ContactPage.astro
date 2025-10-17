@@ -385,6 +385,41 @@ import './contactPage.css';
       observer.observe(el);
     });
 
+    // Input validation functions
+    const nameInput = document.getElementById('name');
+    const companyInput = document.getElementById('company');
+    const phoneInput = document.getElementById('phone');
+    const messageTextarea = document.getElementById('message');
+    
+    // Función para validar solo texto (letras, acentos, espacios)
+    const validateTextOnly = (e) => {
+      e.target.value = e.target.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúÑñ\s]/g, '');
+    };
+    
+    // Función para validar teléfonos (números, espacios, guiones, paréntesis, +)
+    const validatePhoneOnly = (e) => {
+      e.target.value = e.target.value.replace(/[^0-9\s\-\(\)\+]/g, '');
+    };
+    
+    // Función para validar textarea (letras, números, acentos, espacios, puntos, comas)
+    const validateMessageText = (e) => {
+      e.target.value = e.target.value.replace(/[^A-Za-z0-9ÁÉÍÓÚáéíóúÑñ\s\.\,]/g, '');
+    };
+    
+    // Aplicar validaciones a campos específicos
+    if (nameInput) {
+      nameInput.addEventListener('input', validateTextOnly);
+    }
+    if (companyInput) {
+      companyInput.addEventListener('input', validateTextOnly);
+    }
+    if (phoneInput) {
+      phoneInput.addEventListener('input', validatePhoneOnly);
+    }
+    if (messageTextarea) {
+      messageTextarea.addEventListener('input', validateMessageText);
+    }
+
     // Form input effects
     document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(input => {
       input.addEventListener('focus', function() {

@@ -77,6 +77,38 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    const nombreRegex = /^[a-zA-ZÀ-ÿ\s]{2,50}$/;
+    if (!nombreRegex.test(name)) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'El nombre no es válido'
+        }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+    }
+
+    const messageRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+    if (messageRegex.test(message)) {
+      return new Response(
+        JSON.stringify({
+            success: false,
+            message: 'El mensaje contiene contenido no permitido.'
+        }),
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+        );
+    }
+
     // Verificar variables de entorno
     if (!import.meta.env.EMAIL_USER || !import.meta.env.EMAIL_PASS) {
       console.error('❌ Variables de entorno faltantes:', {
