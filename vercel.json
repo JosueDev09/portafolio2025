@@ -4,11 +4,6 @@
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
   "framework": "astro",
-  "functions": {
-    "pages/api/sendEmail/**/*.js": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/assets/(.*)",
