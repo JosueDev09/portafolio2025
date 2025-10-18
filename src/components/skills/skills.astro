@@ -46,7 +46,13 @@ interface SkillData {
         </div>
         
         <div class="skills-grid">
-          {frontendSkills.map((skill) => (
+          {frontendSkills
+            .sort((a, b) => {
+              const levelA = parseInt(a.data.level.replace('%', ''));
+              const levelB = parseInt(b.data.level.replace('%', ''));
+              return levelB - levelA; // Orden descendente (mayor a menor)
+            })
+            .map((skill) => (
             <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
               <div class="skill-content">
                 <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
@@ -72,7 +78,13 @@ interface SkillData {
         </div>
         
         <div class="skills-grid">
-          {backendSkills.map((skill) => (
+          {backendSkills
+            .sort((a, b) => {
+              const levelA = parseInt(a.data.level.replace('%', ''));
+              const levelB = parseInt(b.data.level.replace('%', ''));
+              return levelB - levelA; // Orden descendente (mayor a menor)
+            })
+            .map((skill) => (
             <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
               <div class="skill-content">
                 <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
@@ -100,7 +112,13 @@ interface SkillData {
         </div>
         
         <div class="skills-grid">
-          {toolsSkills.map((skill) => (
+          {toolsSkills
+            .sort((a, b) => {
+              const levelA = parseInt(a.data.level.replace('%', ''));
+              const levelB = parseInt(b.data.level.replace('%', ''));
+              return levelB - levelA; // Orden descendente (mayor a menor)
+            })
+            .map((skill) => (
             <div class="skill-item" data-level={skill.data.level.replace('%', '')}>
               <div class="skill-content">
                 <img src={skill.data.img} alt={skill.data.title} class="skill-logo">
