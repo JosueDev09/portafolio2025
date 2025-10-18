@@ -5,9 +5,8 @@
   "installCommand": "pnpm install",
   "framework": "astro",
   "functions": {
-    "api/send-email": {
-      "memory": 128,
-      "maxDuration": 10
+    "api/send-email/**/*.ts": {
+      "maxDuration": 30
     }
   },
   "headers": [
