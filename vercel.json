@@ -5,7 +5,7 @@
   "installCommand": "pnpm install",
   "framework": "astro",
   "functions": {
-    "api/send-email/**/*.ts": {
+    "api/sendEmail/**/*.js": {
       "maxDuration": 30
     }
   },
