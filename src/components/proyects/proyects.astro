@@ -22,36 +22,49 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       <!-- Proyecto 1 -->
-      <div class="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:-translate-y-2">
-        <div class="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-600/20 relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="w-full h-2 bg-cyan-400/30 rounded-full mb-2"></div>
-            <div class="w-3/4 h-2 bg-blue-400/20 rounded-full"></div>
+     <div class="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:-translate-y-2">
+  <!-- 🔹 Fondo con imagen -->
+          <div class="aspect-video relative overflow-hidden">
+            <img
+              src="/public/assets/imgConvertidas/disenoInteriores.webp"
+              alt="Proyecto Web"
+              class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            />
+            <!-- Overlay oscuro para contraste -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            <!-- Barras decorativas (puedes quitarlas si quieres) -->
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="w-full h-2 bg-cyan-400/30 rounded-full mb-2"></div>
+              <div class="w-3/4 h-2 bg-blue-400/20 rounded-full"></div>
+            </div>
+          </div>
+
+  <!-- Contenido -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+             Diseño de Interiores Web
+            </h3>
+            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+              Aplicación web full-stack con astro. Diseño responsive y optimizado.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-lg">Astro</span>
+              <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-lg">Tailwind CSS</span>
+              <!-- <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-lg"></span> -->
+            </div>
+
+            <div class="flex gap-3">
+              <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors">
+                Ver Demo →
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
+                Código →
+              </a>
+            </div>
           </div>
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2 text-cyan-400 group-hover:text-cyan-300 transition-colors">
-            Proyecto Web Moderno
-          </h3>
-          <p class="text-gray-300 text-sm mb-4 leading-relaxed">
-            Aplicación web full-stack con React, Node.js y base de datos moderna. Diseño responsive y optimizado.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-lg">React</span>
-            <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-lg">Node.js</span>
-            <span class="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-lg">MongoDB</span>
-          </div>
-          <div class="flex gap-3">
-            <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors">
-              Ver Demo →
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
-              Código →
-            </a>
-          </div>
-        </div>
-      </div>
+
 
       <!-- Proyecto 2 -->
       <div class="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2">
