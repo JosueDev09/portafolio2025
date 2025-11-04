@@ -1,0 +1,551 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../components/cotizacion/cotizacion.css';
+---
+
+<Layout 
+  title="Cotización de Proyecto - Josue Dev" 
+  description="Cotización detallada y personalizada para tu proyecto de desarrollo web. Proceso transparente y profesional."
+  showMenu={false}
+>
+  <section class="quote-page">
+    <div class="quote-container">
+      
+      <!-- Header con botón de regreso -->
+      <div class="quote-header">
+        <a href="javascript:history.back()" class="back-btn">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          <span>Volver</span>
+        </a>
+        
+        <div class="actions-header">
+          <button class="action-btn edit-btn" id="editBtn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+            <span>Editar</span>
+          </button>
+          
+          <button class="action-btn save-btn" id="saveBtn" style="display: none;">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Guardar</span>
+          </button>
+          
+          <button class="action-btn print-btn" id="printBtn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            <span>Imprimir</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Documento de Cotización -->
+      <div class="quote-document">
+        
+        <!-- Hero de la cotización -->
+        <div class="quote-hero">
+          <div class="quote-title-section">
+            <h1 class="quote-main-title">
+              <span class="gradient-text">Cotización</span>
+              <span class="quote-number" contenteditable="false" data-editable>#COT-2024-001</span>
+            </h1>
+            <p class="quote-subtitle">Propuesta de Desarrollo Web Profesional</p>
+          </div>
+          
+          <div class="quote-meta">
+            <div class="meta-item">
+              <span class="meta-label">Fecha:</span>
+              <span class="meta-value" contenteditable="false" data-editable>04 Noviembre 2024</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Válida hasta:</span>
+              <span class="meta-value" contenteditable="false" data-editable>04 Diciembre 2024</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Estado:</span>
+              <span class="status-badge active">Activa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Información de las partes -->
+        <div class="parties-info">
+          <div class="party-card developer">
+            <h3>De:</h3>
+            <div class="party-details">
+              <p class="party-name" contenteditable="false" data-editable>Josué Dev</p>
+              <p class="party-role">Desarrollador Full Stack</p>
+              <p class="party-contact" contenteditable="false" data-editable>esymbel.mkt2025@gmail.com</p>
+              <p class="party-contact" contenteditable="false" data-editable>+52 (123) 456-7890</p>
+            </div>
+          </div>
+          
+          <div class="party-card client">
+            <h3>Para:</h3>
+            <div class="party-details">
+              <p class="party-name" contenteditable="false" data-editable>Nombre del Cliente</p>
+              <p class="party-role" contenteditable="false" data-editable>Empresa / Organización</p>
+              <p class="party-contact" contenteditable="false" data-editable>cliente@email.com</p>
+              <p class="party-contact" contenteditable="false" data-editable>+52 (XXX) XXX-XXXX</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descripción del proyecto -->
+        <div class="project-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Descripción del Proyecto
+          </h2>
+          <div class="project-description" contenteditable="false" data-editable>
+            <p>Desarrollo de sitio web corporativo moderno y responsivo con las siguientes características:</p>
+            <ul>
+              <li>Diseño personalizado y atractivo</li>
+              <li>Sistema de gestión de contenidos (CMS)</li>
+              <li>Optimización SEO avanzada</li>
+              <li>Integración con redes sociales</li>
+              <li>Formularios de contacto y newsletter</li>
+              <li>Panel de administración completo</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tabla de servicios -->
+        <div class="services-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+            Desglose de Servicios
+          </h2>
+          
+          <div class="services-table">
+            <div class="table-header">
+              <div class="col-service">Servicio</div>
+              <div class="col-description">Descripción</div>
+              <div class="col-quantity">Cantidad</div>
+              <div class="col-price">Precio Unit.</div>
+              <div class="col-total">Total</div>
+            </div>
+            
+            <div class="table-body" id="servicesTableBody">
+              {/* <!-- Servicio 1 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>Diseño UI/UX</div>
+                <div class="col-description" contenteditable="false" data-editable>Diseño de interfaz de usuario y experiencia completa</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$800.00</div>
+                <div class="col-total" data-total>$800.00</div>
+              </div>
+              
+              {/* <!-- Servicio 2 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>Desarrollo Frontend</div>
+                <div class="col-description" contenteditable="false" data-editable>Implementación HTML, CSS, JavaScript con React/Astro</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$1,500.00</div>
+                <div class="col-total" data-total>$1,500.00</div>
+              </div>
+              
+              {/* <!-- Servicio 3 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>Desarrollo Backend</div>
+                <div class="col-description" contenteditable="false" data-editable>API REST, base de datos, autenticación</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$1,200.00</div>
+                <div class="col-total" data-total>$1,200.00</div>
+              </div>
+              
+              {/* <!-- Servicio 4 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>CMS Personalizado</div>
+                <div class="col-description" contenteditable="false" data-editable>Sistema de gestión de contenidos a medida</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$1,000.00</div>
+                <div class="col-total" data-total>$1,000.00</div>
+              </div>
+              
+              {/* <!-- Servicio 5 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>SEO & Optimización</div>
+                <div class="col-description" contenteditable="false" data-editable>Optimización de velocidad, SEO técnico y análisis</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$500.00</div>
+                <div class="col-total" data-total>$500.00</div>
+              </div>
+              
+              {/* <!-- Servicio 6 --> */}
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>Capacitación</div>
+                <div class="col-description" contenteditable="false" data-editable>2 sesiones de capacitación y documentación</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">2</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$150.00</div>
+                <div class="col-total" data-total>$300.00</div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="add-service-btn" id="addServiceBtn" style="display: none;">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            Agregar Servicio
+          </button>
+        </div>
+
+        {/* <!-- Resumen de costos --> */}
+        <div class="cost-summary">
+          <div class="summary-rows">
+            <div class="summary-row">
+              <span class="summary-label">Subtotal:</span>
+              <span class="summary-value" id="subtotal">$5,300.00</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">IVA (16%):</span>
+              <span class="summary-value" id="tax">$848.00</span>
+            </div>
+            <div class="summary-row total-row">
+              <span class="summary-label">Total:</span>
+              <span class="summary-value" id="total">$6,148.00 USD</span>
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- Plan de pagos --> */}
+        <div class="payment-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            Plan de Pagos
+          </h2>
+          
+          <div class="payment-plan">
+            <div class="payment-item">
+              <div class="payment-badge">40%</div>
+              <div class="payment-details">
+                <h4>Anticipo Inicial</h4>
+                <p class="payment-amount" data-payment="40">$2,459.20 USD</p>
+                <p class="payment-description">Al firmar el contrato y comenzar el proyecto</p>
+              </div>
+            </div>
+            
+            <div class="payment-item">
+              <div class="payment-badge">40%</div>
+              <div class="payment-details">
+                <h4>Pago de Progreso</h4>
+                <p class="payment-amount" data-payment="40">$2,459.20 USD</p>
+                <p class="payment-description">Al alcanzar el 70% de avance del proyecto</p>
+              </div>
+            </div>
+            
+            <div class="payment-item">
+              <div class="payment-badge">20%</div>
+              <div class="payment-details">
+                <h4>Pago Final</h4>
+                <p class="payment-amount" data-payment="20">$1,229.60 USD</p>
+                <p class="payment-description">Al entregar el proyecto completo y funcional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- Cronograma --> */}
+        <div class="timeline-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Cronograma del Proyecto
+          </h2>
+          
+          <div class="timeline-content" contenteditable="false" data-editable>
+            <div class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-info">
+                <h4>Semana 1-2: Planificación y Diseño</h4>
+                <p>Wireframes, mockups y arquitectura del sistema</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-info">
+                <h4>Semana 3-5: Desarrollo Frontend</h4>
+                <p>Implementación de la interfaz de usuario</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-info">
+                <h4>Semana 6-7: Desarrollo Backend</h4>
+                <p>API, base de datos y funcionalidades del servidor</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-info">
+                <h4>Semana 8: Testing y Optimización</h4>
+                <p>Pruebas exhaustivas y optimización de rendimiento</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">5</div>
+              <div class="timeline-info">
+                <h4>Semana 9: Despliegue y Capacitación</h4>
+                <p>Lanzamiento y transferencia de conocimiento</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-summary">
+            <p><strong>Duración total estimada:</strong> <span contenteditable="false" data-editable>9 semanas (aproximadamente 2 meses)</span></p>
+          </div>
+        </div>
+
+        {/* <!-- Términos y condiciones --> */}
+        <div class="terms-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Términos y Condiciones
+          </h2>
+          
+          <div class="terms-content" contenteditable="false" data-editable>
+            <ul class="terms-list">
+              <li><strong>Garantía:</strong> 30 días de garantía contra bugs y errores de funcionamiento.</li>
+              <li><strong>Soporte:</strong> 30 días de soporte técnico gratuito post-entrega.</li>
+              <li><strong>Cambios:</strong> Cambios menores incluidos (±5% funcionalidad). Cambios mayores requieren nueva cotización.</li>
+              <li><strong>Pagos:</strong> Los pagos deben realizarse según el cronograma establecido. Tolerancia de 5 días calendario.</li>
+              <li><strong>Propiedad:</strong> El cliente obtiene todos los derechos del código al completar el pago total.</li>
+              <li><strong>Confidencialidad:</strong> Toda la información del proyecto es confidencial y protegida.</li>
+              <li><strong>Entregables:</strong> Código fuente, documentación técnica, capacitación y accesos completos.</li>
+            </ul>
+          </div>
+          
+          <div class="terms-link">
+            <a href="/proceso-trabajo" class="view-legal-btn">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              Ver Documento Legal Completo
+            </a>
+          </div>
+        </div>
+
+        {/* <!-- Firma y aceptación --> */}
+        <div class="signature-section">
+          <h2 class="section-title">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+            Aceptación de la Cotización
+          </h2>
+          
+          <div class="signature-grid">
+            <div class="signature-box">
+              <div class="signature-line"></div>
+              <p class="signature-label">Firma del Desarrollador</p>
+              <p class="signature-name" contenteditable="false" data-editable>Josué Dev</p>
+              <p class="signature-date">Fecha: _________________</p>
+            </div>
+            
+            <div class="signature-box">
+              <div class="signature-line"></div>
+              <p class="signature-label">Firma del Cliente</p>
+              <p class="signature-name" contenteditable="false" data-editable>Nombre del Cliente</p>
+              <p class="signature-date">Fecha: _________________</p>
+            </div>
+          </div>
+          
+          <div class="acceptance-note">
+            <p>Al firmar esta cotización, ambas partes aceptan los términos, condiciones y cronograma establecidos en este documento.</p>
+          </div>
+        </div>
+
+        {/* <!-- Footer de la cotización --> */}
+        <div class="quote-footer">
+          <p class="footer-text">Para cualquier consulta sobre esta cotización, contáctame a <a href="mailto:esymbel.mkt2025@gmail.com">esymbel.mkt2025@gmail.com</a></p>
+          <p class="footer-note">Esta cotización fue generada el <span contenteditable="false" data-editable>04 de Noviembre de 2024</span> y es válida por 30 días.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <script>
+    // 🚀 FUNCIONALIDAD DE EDICIÓN Y CÁLCULOS
+    
+    let isEditMode = false;
+
+    // Elementos del DOM
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const printBtn = document.getElementById('printBtn');
+    const addServiceBtn = document.getElementById('addServiceBtn');
+    const servicesTableBody = document.getElementById('servicesTableBody');
+
+    // Modo de edición
+    function toggleEditMode() {
+      isEditMode = !isEditMode;
+      
+      const editableElements = document.querySelectorAll('[data-editable]');
+      
+      editableElements.forEach(el => {
+        (el as HTMLElement).contentEditable = isEditMode ? 'true' : 'false';
+        
+        if (isEditMode) {
+          (el as HTMLElement).style.outline = '2px dashed rgba(59, 130, 246, 0.4)';
+        } else {
+          (el as HTMLElement).style.outline = 'none';
+        }
+      });
+
+      // Mostrar/ocultar botones
+      if (isEditMode) {
+        if (editBtn) editBtn.style.display = 'none';
+        if (saveBtn) saveBtn.style.display = 'inline-flex';
+        if (addServiceBtn) addServiceBtn.style.display = 'inline-flex';
+      } else {
+        if (editBtn) editBtn.style.display = 'inline-flex';
+        if (saveBtn) saveBtn.style.display = 'none';
+        if (addServiceBtn) addServiceBtn.style.display = 'none';
+      }
+    }
+
+    // Calcular totales de servicios
+    function calculateTotals() {
+      const rows = document.querySelectorAll('[data-service-row]');
+      let subtotal = 0;
+
+      rows.forEach(row => {
+        const quantityEl = row.querySelector('[data-type="number"]');
+        const priceEl = row.querySelector('[data-type="currency"]');
+        const totalEl = row.querySelector('[data-total]');
+
+        const quantity = quantityEl ? parseFloat(quantityEl.textContent) || 0 : 0;
+        const price = priceEl ? parseFloat(priceEl.textContent.replace(/[$,]/g, '')) || 0 : 0;
+        const total = quantity * price;
+
+        if (totalEl) totalEl.textContent = `${total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        subtotal += total;
+      });
+
+      // Actualizar resumen
+      const tax = subtotal * 0.16; // 16% IVA
+      const total = subtotal + tax;
+
+      const subtotalEl = document.getElementById('subtotal');
+      if (subtotalEl) subtotalEl.textContent = `${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+      const taxEl = document.getElementById('tax');
+      if (taxEl) taxEl.textContent = `${tax.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+      const totalEl = document.getElementById('total');
+      if (totalEl) totalEl.textContent = `${total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+
+      // Actualizar plan de pagos
+      updatePaymentPlan(total);
+    }
+
+    // Actualizar plan de pagos
+    function updatePaymentPlan(total: number) {
+      const paymentElements = document.querySelectorAll('[data-payment]');
+      
+      paymentElements.forEach(el => {
+        const percentage = parseFloat(el.getAttribute('data-payment') ?? '0') / 100;
+        const amount = total * percentage;
+        el.textContent = `${amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+      });
+    }
+
+    // Agregar nuevo servicio
+    function addNewService() {
+      const newRow = document.createElement('div');
+      newRow.className = 'table-row';
+      newRow.setAttribute('data-service-row', '');
+      newRow.innerHTML = `
+        <div class="col-service" contenteditable="true" data-editable>Nuevo Servicio</div>
+        <div class="col-description" contenteditable="true" data-editable>Descripción del servicio</div>
+        <div class="col-quantity" contenteditable="true" data-editable data-type="number">1</div>
+        <div class="col-price" contenteditable="true" data-editable data-type="currency">$0.00</div>
+        <div class="col-total" data-total>$0.00</div>
+      `;
+      
+      if (servicesTableBody) {
+        servicesTableBody.appendChild(newRow);
+        calculateTotals();
+        
+        // Focus en el primer campo
+        const serviceCell = newRow.querySelector('.col-service');
+        if (serviceCell) {
+          (serviceCell as HTMLElement).focus();
+        }
+      }
+    }
+
+    // Event listeners
+    editBtn?.addEventListener('click', toggleEditMode);
+    saveBtn?.addEventListener('click', () => {
+      toggleEditMode();
+      calculateTotals();
+      alert('✅ Cambios guardados correctamente');
+    });
+
+    printBtn?.addEventListener('click', () => {
+      window.print();
+    });
+
+    addServiceBtn?.addEventListener('click', addNewService);
+
+    // Recalcular al cambiar cantidad o precio
+    document.addEventListener('input', (e) => {
+      const target = e.target as Element;
+      if (target.hasAttribute('data-type')) {
+        calculateTotals();
+      }
+    });
+
+    // Animaciones al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.project-section, .services-section, .payment-section, .timeline-section, .terms-section, .signature-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).style.opacity = '1';
+            (entry.target as HTMLElement).style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      sections.forEach((section, index) => {
+        const el = section as HTMLElement;
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(section);
+      });
+
+      // Calcular totales iniciales
+      calculateTotals();
+
+      console.log('💼 Página de Cotización cargada - Lista para editar');
+    });
+  </script>
+</Layout>
