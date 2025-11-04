@@ -440,7 +440,7 @@ import '../components/cotizacion/cotizacion.css';
         const price = priceEl ? parseFloat(priceEl.textContent.replace(/[$,]/g, '')) || 0 : 0;
         const total = quantity * price;
 
-        if (totalEl) totalEl.textContent = `${total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        if (totalEl) totalEl.textContent = `${total.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
         subtotal += total;
       });
 
@@ -449,13 +449,13 @@ import '../components/cotizacion/cotizacion.css';
       const total = subtotal + tax;
 
       const subtotalEl = document.getElementById('subtotal');
-      if (subtotalEl) subtotalEl.textContent = `${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      if (subtotalEl) subtotalEl.textContent = `${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
 
       const taxEl = document.getElementById('tax');
-      if (taxEl) taxEl.textContent = `${tax.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      if (taxEl) taxEl.textContent = `${tax.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
 
       const totalEl = document.getElementById('total');
-      if (totalEl) totalEl.textContent = `${total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+      if (totalEl) totalEl.textContent = `${total.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
 
       // Actualizar plan de pagos
       updatePaymentPlan(total);
@@ -468,7 +468,7 @@ import '../components/cotizacion/cotizacion.css';
       paymentElements.forEach(el => {
         const percentage = parseFloat(el.getAttribute('data-payment') ?? '0') / 100;
         const amount = total * percentage;
-        el.textContent = `${amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        el.textContent = `${amount.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
       });
     }
 
