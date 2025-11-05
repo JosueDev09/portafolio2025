@@ -237,6 +237,15 @@ import Layout from '../layouts/Layout.astro';
                 <div class="col-price" contenteditable="false" data-editable data-type="currency">$1,000.00</div>
                 <div class="col-total" data-total>$1,000.00</div>
               </div>
+              
+              <!-- Servicio 4 -->
+              <div class="table-row" data-service-row>
+                <div class="col-service" contenteditable="false" data-editable>🌐 Hosting + Dominio</div>
+                <div class="col-description" contenteditable="false" data-editable>Configuración y puesta en línea anual</div>
+                <div class="col-quantity" contenteditable="false" data-editable data-type="number">1</div>
+                <div class="col-price" contenteditable="false" data-editable data-type="currency">$2,000.00</div>
+                <div class="col-total" data-total>$2,000.00</div>
+              </div>
             </div>
           </div>
           
@@ -253,11 +262,11 @@ import Layout from '../layouts/Layout.astro';
           <div class="summary-rows">
             <div class="summary-row">
               <span class="summary-label">Subtotal:</span>
-              <span class="summary-value" id="subtotal">$6,500.00</span>
+              <span class="summary-value" id="subtotal">$8,500.00</span>
             </div>
             <div class="summary-row total-row">
               <span class="summary-label">Total:</span>
-              <span class="summary-value" id="total">$6,500.00 MXN</span>
+              <span class="summary-value" id="total">$8,500.00 MXN</span>
             </div>
           </div>
           <div class="cost-note">
@@ -276,12 +285,6 @@ import Layout from '../layouts/Layout.astro';
           
           <div class="optional-grid">
             <div class="optional-card">
-              <h4>🌐 Hosting + Dominio</h4>
-              <p class="optional-description" contenteditable="false" data-editable>Configuración y puesta en línea anual</p>
-              <p class="optional-price" contenteditable="false" data-editable>$1,200 MXN</p>
-            </div>
-            
-            <div class="optional-card">
               <h4>✨ Animaciones Avanzadas</h4>
               <p class="optional-description" contenteditable="false" data-editable>Transiciones y efectos visuales premium (Framer Motion)</p>
               <p class="optional-price" contenteditable="false" data-editable>$800 MXN</p>
@@ -291,6 +294,12 @@ import Layout from '../layouts/Layout.astro';
               <h4>📝 Blog Administrable (CMS)</h4>
               <p class="optional-description" contenteditable="false" data-editable>Sección dinámica administrable (ej. Sanity, Contentful)</p>
               <p class="optional-price" contenteditable="false" data-editable>$1,500 MXN</p>
+            </div>
+            
+            <div class="optional-card">
+              <h4>🎨 Rediseño Completo</h4>
+              <p class="optional-description" contenteditable="false" data-editable>Actualización completa del diseño visual existente</p>
+              <p class="optional-price" contenteditable="false" data-editable>$3,000 MXN</p>
             </div>
           </div>
         </div>
@@ -309,7 +318,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="payment-badge">50%</div>
               <div class="payment-details">
                 <h4>Anticipo Inicial</h4>
-                <p class="payment-amount" data-payment="50">$3,250.00 MXN</p>
+                <p class="payment-amount" data-payment="50">$4,250.00 MXN</p>
                 <p class="payment-description">Anticipo para iniciar el proyecto</p>
               </div>
             </div>
@@ -318,7 +327,7 @@ import Layout from '../layouts/Layout.astro';
               <div class="payment-badge">50%</div>
               <div class="payment-details">
                 <h4>Pago Final</h4>
-                <p class="payment-amount" data-payment="50">$3,250.00 MXN</p>
+                <p class="payment-amount" data-payment="50">$4,250.00 MXN</p>
                 <p class="payment-description">Restante al finalizar y entregar el sitio</p>
               </div>
             </div>
@@ -1686,18 +1695,18 @@ import Layout from '../layouts/Layout.astro';
       });
 
       // Actualizar resumen
-      const tax = subtotal * 0.16; // 16% IVA
-      const total = subtotal + tax;
+      // const tax = subtotal * 0.16; // 16% IVA
+      // const total = subtotal + tax;
 
       const subtotalEl = document.getElementById('subtotal');
       if (subtotalEl) subtotalEl.textContent = `${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-      const taxEl = document.getElementById('tax');
-      if (taxEl) taxEl.textContent = `${tax.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+      // const taxEl = document.getElementById('tax');
+      // if (taxEl) taxEl.textContent = `${tax.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
       const totalEl = document.getElementById('total');
-      if (totalEl) totalEl.textContent = `${total.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
+      if (totalEl) totalEl.textContent = `${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
 
       // Actualizar plan de pagos
-      updatePaymentPlan(total);
+      updatePaymentPlan(subtotal);
     }
 
     // Actualizar plan de pagos
@@ -1716,11 +1725,16 @@ import Layout from '../layouts/Layout.astro';
       const newRow = document.createElement('div');
       newRow.className = 'table-row';
       newRow.setAttribute('data-service-row', '');
+      
+      // Crear los elementos con el contenteditable según el modo actual
+      const editableState = isEditMode ? 'true' : 'false';
+      const outlineStyle = isEditMode ? '2px dashed rgba(59, 130, 246, 0.4)' : 'none';
+      
       newRow.innerHTML = `
-        <div class="col-service" contenteditable="true" data-editable>Nuevo Servicio</div>
-        <div class="col-description" contenteditable="true" data-editable>Descripción del servicio</div>
-        <div class="col-quantity" contenteditable="true" data-editable data-type="number">1</div>
-        <div class="col-price" contenteditable="true" data-editable data-type="currency">$0.00</div>
+        <div class="col-service" contenteditable="${editableState}" data-editable style="outline: ${outlineStyle}">Nuevo Servicio</div>
+        <div class="col-description" contenteditable="${editableState}" data-editable style="outline: ${outlineStyle}">Descripción del servicio</div>
+        <div class="col-quantity" contenteditable="${editableState}" data-editable data-type="number" style="outline: ${outlineStyle}">1</div>
+        <div class="col-price" contenteditable="${editableState}" data-editable data-type="currency" style="outline: ${outlineStyle}">$0.00</div>
         <div class="col-total" data-total>$0.00</div>
       `;
       
@@ -1728,10 +1742,12 @@ import Layout from '../layouts/Layout.astro';
         servicesTableBody.appendChild(newRow);
         calculateTotals();
         
-        // Focus en el primer campo
-        const serviceCell = newRow.querySelector('.col-service');
-        if (serviceCell) {
-          (serviceCell as HTMLElement).focus();
+        // Focus en el primer campo si está en modo edición
+        if (isEditMode) {
+          const serviceCell = newRow.querySelector('.col-service');
+          if (serviceCell) {
+            (serviceCell as HTMLElement).focus();
+          }
         }
       }
     }
