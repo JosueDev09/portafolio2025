@@ -34,6 +34,13 @@ import Layout from '../layouts/Layout.astro';
             <span>Guardar</span>
           </button>
           
+          <button class="action-btn download-btn" id="downloadBtn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span>Descargar PDF</span>
+          </button>
+          
           <button class="action-btn print-btn" id="printBtn">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
@@ -557,6 +564,17 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .save-btn:hover {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .download-btn {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    .download-btn:hover {
       background: rgba(34, 197, 94, 0.15);
       border-color: rgba(34, 197, 94, 0.4);
     }
@@ -1571,6 +1589,20 @@ import Layout from '../layouts/Layout.astro';
       }
     }
 
+    /* Animación del spinner */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+
     @media print {
       .quote-header,
       .back-btn,
@@ -1589,6 +1621,9 @@ import Layout from '../layouts/Layout.astro';
     }
   </style>
 
+  <!-- Librería html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   <script>
     // 🚀 FUNCIONALIDAD DE EDICIÓN Y CÁLCULOS
     
@@ -1597,6 +1632,7 @@ import Layout from '../layouts/Layout.astro';
     // Elementos del DOM
     const editBtn = document.getElementById('editBtn');
     const saveBtn = document.getElementById('saveBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
     const printBtn = document.getElementById('printBtn');
     const addServiceBtn = document.getElementById('addServiceBtn');
     const servicesTableBody = document.getElementById('servicesTableBody');
@@ -1688,13 +1724,15 @@ import Layout from '../layouts/Layout.astro';
         <div class="col-total" data-total>$0.00</div>
       `;
       
-      servicesTableBody.appendChild(newRow);
-      calculateTotals();
-      
-      // Focus en el primer campo
-      const serviceCell = newRow.querySelector('.col-service');
-      if (serviceCell) {
-        (serviceCell as HTMLElement).focus();
+      if (servicesTableBody) {
+        servicesTableBody.appendChild(newRow);
+        calculateTotals();
+        
+        // Focus en el primer campo
+        const serviceCell = newRow.querySelector('.col-service');
+        if (serviceCell) {
+          (serviceCell as HTMLElement).focus();
+        }
       }
     }
 
@@ -1704,6 +1742,95 @@ import Layout from '../layouts/Layout.astro';
       toggleEditMode();
       calculateTotals();
       alert('✅ Cambios guardados correctamente');
+    });
+
+    // Descargar como PDF
+    downloadBtn?.addEventListener('click', async () => {
+      // Desactivar modo edición si está activo
+      if (isEditMode) {
+        toggleEditMode();
+      }
+
+      // Ocultar botones de acción temporalmente
+      const header = document.querySelector('.quote-header') as HTMLElement;
+      const originalDisplay = header ? header.style.display : '';
+      if (header) header.style.display = 'none';
+
+      // Obtener el número de cotización para el nombre del archivo
+      const quoteNumberEl = document.querySelector('.quote-number');
+      const quoteNumber = quoteNumberEl ? quoteNumberEl.textContent?.trim().replace('#', '') : 'COT-2024-001';
+      
+      const element = document.querySelector('.quote-document');
+      
+      const opt = {
+        margin: [10, 10, 10, 10],
+        filename: `Cotizacion_${quoteNumber}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          letterRendering: true,
+          allowTaint: true
+        },
+        jsPDF: { 
+          unit: 'mm', 
+          format: 'a4', 
+          orientation: 'portrait',
+          compress: true
+        },
+        pagebreak: { 
+          mode: ['avoid-all', 'css', 'legacy'],
+          before: '.page-break-before',
+          after: '.page-break-after',
+          avoid: ['.no-break', 'table-row', '.signature-section']
+        }
+      };
+
+      try {
+        // Mostrar mensaje de carga
+        if (downloadBtn) {
+          downloadBtn.innerHTML = `
+            <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            <span>Generando PDF...</span>
+          `;
+        }
+
+        // Generar y descargar el PDF
+        await (window as any).html2pdf().set(opt).from(element).save();
+
+        // Restaurar botón
+        if (downloadBtn) {
+          downloadBtn.innerHTML = `
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span>Descargar PDF</span>
+          `;
+        }
+
+        // Mostrar notificación de éxito
+        alert('✅ PDF descargado correctamente');
+
+      } catch (error) {
+        console.error('Error al generar PDF:', error);
+        alert('❌ Error al generar el PDF. Por favor, intenta de nuevo.');
+        
+        // Restaurar botón en caso de error
+        if (downloadBtn) {
+          downloadBtn.innerHTML = `
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span>Descargar PDF</span>
+          `;
+        }
+      } finally {
+        // Restaurar header
+        if (header) header.style.display = originalDisplay;
+      }
     });
 
     printBtn?.addEventListener('click', () => {
