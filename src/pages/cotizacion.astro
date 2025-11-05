@@ -1639,8 +1639,8 @@ import Layout from '../layouts/Layout.astro';
         const priceEl = row.querySelector('[data-type="currency"]');
         const totalEl = row.querySelector('[data-total]');
 
-        const quantity = quantityEl ? parseFloat(quantityEl.textContent) : 0;
-        const price = priceEl ? parseFloat(priceEl.textContent.replace(/[$,]/g, '')) : 0;
+        const quantity = quantityEl ? parseFloat(quantityEl.textContent) || 0 : 0;
+        const price = priceEl ? parseFloat(priceEl.textContent.replace(/[$,]/g, '')) || 0 : 0;
         const total = quantity * price;
 
         if (totalEl) {
@@ -1654,17 +1654,11 @@ import Layout from '../layouts/Layout.astro';
       const total = subtotal + tax;
 
       const subtotalEl = document.getElementById('subtotal');
-      if (subtotalEl) {
-        subtotalEl.textContent = `${subtotal.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-      }
+      if (subtotalEl) subtotalEl.textContent = `${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
       const taxEl = document.getElementById('tax');
-      if (taxEl) {
-        taxEl.textContent = `${tax.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-      }
+      if (taxEl) taxEl.textContent = `${tax.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
       const totalEl = document.getElementById('total');
-      if (totalEl) {
-        totalEl.textContent = `${total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
-      }
+      if (totalEl) totalEl.textContent = `${total.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
 
       // Actualizar plan de pagos
       updatePaymentPlan(total);
@@ -1677,7 +1671,7 @@ import Layout from '../layouts/Layout.astro';
       paymentElements.forEach(el => {
         const percentage = parseFloat(el.getAttribute('data-payment') ?? '0') / 100;
         const amount = total * percentage;
-        el.textContent = `${amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`;
+        el.textContent = `${amount.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN`;
       });
     }
 
@@ -1694,12 +1688,13 @@ import Layout from '../layouts/Layout.astro';
         <div class="col-total" data-total>$0.00</div>
       `;
       
-      if (servicesTableBody) {
-        servicesTableBody.appendChild(newRow);
-        calculateTotals();
-        
-        // Focus en el primer campo
-        (newRow.querySelector('.col-service') as HTMLElement)?.focus();
+      servicesTableBody.appendChild(newRow);
+      calculateTotals();
+      
+      // Focus en el primer campo
+      const serviceCell = newRow.querySelector('.col-service');
+      if (serviceCell) {
+        (serviceCell as HTMLElement).focus();
       }
     }
 
@@ -1720,7 +1715,7 @@ import Layout from '../layouts/Layout.astro';
     // Recalcular al cambiar cantidad o precio
     document.addEventListener('input', (e) => {
       const target = e.target as Element;
-      if (target && target.hasAttribute('data-type')) {
+      if (target.hasAttribute('data-type')) {
         calculateTotals();
       }
     });
@@ -1741,9 +1736,10 @@ import Layout from '../layouts/Layout.astro';
       });
 
       sections.forEach((section, index) => {
-        (section as HTMLElement).style.opacity = '0';
-        (section as HTMLElement).style.transform = 'translateY(20px)';
-        (section as HTMLElement).style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        const el = section as HTMLElement;
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
         observer.observe(section);
       });
 
